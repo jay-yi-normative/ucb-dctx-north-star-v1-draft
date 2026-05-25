@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UCB · DCTx North Star · Digital Health & Care Transformation Partnership Framework</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ── Normative Brand Palette (Blue Colorway) ── */
+  --blue:     #5260FE;   /* Normative Blue – primary brand anchor */
+  --midnight: #252FA1;   /* Midnight – deep complement */
+  --sky:      #C8E2FA;   /* Sky – light accent, text-on-dark */
+  --sage:     #B3C8C5;   /* Sage – muted green-grey */
+  --fog:      #7E9492;   /* Fog – secondary text, model 4 */
+  --grey:     #E1E6E5;   /* Grey – surface / light bg */
+  --graphite: #222222;   /* Graphite – primary text */
+  --white:    #FFFFFF;
+  --border:   #C8D4D2;
+  --muted:    #7E9492;   /* = --fog */
+  --text:     #222222;   /* = --graphite */
+  /* Legacy aliases so all var() refs resolve cleanly */
+  --navy:       #252FA1; /* → midnight */
+  --blue-light: #C8E2FA; /* → sky */
+  --lgrey:      #E1E6E5; /* → grey */
+  --dkgrey:     #222222; /* → graphite */
+  --gold:       #C8E2FA; /* mapped → sky (accent on dark) */
+  --teal:       #252FA1; /* model-2 → midnight */
+  --purple:     #B3C8C5; /* model-3 → sage */
+  --gold-light: #EDF3F2; /* → sage-tint */
+  --amber:      #7E9492; /* model-4 → fog */
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Manrope', system-ui, sans-serif; color: var(--text); background: var(--white); }
+
+/* ─── NAV ─────────────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--midnight); border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 56px;
+}
+.nav-brand { color: var(--sky); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; }
+.nav-brand span { color: var(--white); font-weight: 400; }
+.nav-links { display: flex; gap: 0.25rem; }
+.nav-links a {
+  color: rgba(200,226,250,0.65); text-decoration: none; font-size: 0.82rem;
+  padding: 0.35rem 0.75rem; border-radius: 4px; transition: all 0.15s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.10); }
+.nav-badge {
+  background: var(--blue); color: var(--white); font-size: 0.7rem;
+  padding: 0.15rem 0.55rem; border-radius: 20px; font-weight: 700;
+}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+#hero {
+  background: linear-gradient(160deg, var(--midnight) 0%, #1D2680 55%, #3040CC 100%);
+  color: var(--white); padding: 5rem 2rem 4rem; position: relative; overflow: hidden;
+}
+#hero::before {
+  content: ''; position: absolute; right: -10%; top: -20%;
+  width: 60%; height: 140%; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(82,96,254,0.18) 0%, transparent 70%);
+}
+.hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
+.hero-eyebrow {
+  color: var(--sky); font-size: 0.75rem; letter-spacing: 0.15em;
+  text-transform: uppercase; font-weight: 700; margin-bottom: 1.25rem;
+}
+.hero-title {
+  font-family: 'Anton', sans-serif; font-size: 3.8rem; font-weight: 400;
+  line-height: 1.05; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.01em;
+}
+.hero-title span { color: var(--sky); }
+.hero-sub { font-size: 1.1rem; color: rgba(200,226,250,0.85); max-width: 620px; line-height: 1.7; margin-bottom: 2.5rem; }
+.hero-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.hero-stat {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 1rem 1.5rem; min-width: 120px;
+}
+.hero-stat-num { font-family: 'Anton', sans-serif; font-size: 2.2rem; font-weight: 400; color: var(--sky); }
+.hero-stat-label { font-size: 0.78rem; color: rgba(200,226,250,0.75); margin-top: 0.2rem; }
+.hero-models { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.hero-model-pill {
+  display: flex; align-items: center; gap: 0.5rem;
+  border-radius: 8px; padding: 0.5rem 1.1rem; font-size: 0.82rem; cursor: pointer;
+  font-weight: 600; transition: all 0.2s; text-decoration: none; letter-spacing: 0.01em;
+}
+.hero-model-pill:hover {
+  background: rgba(255,255,255,0.20) !important;
+  border-color: rgba(255,255,255,0.55) !important;
+  transform: translateY(-1px);
+}
+
+/* ─── SECTION LAYOUT ─────────────────────────────────────── */
+section { padding: 4.5rem 2rem; }
+section:nth-child(even) { background: var(--lgrey); }
+.section-inner { max-width: 1000px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  font-weight: 700; color: var(--blue); margin-bottom: 0.6rem;
+}
+.section-title { font-size: 2rem; font-weight: 800; color: var(--midnight); margin-bottom: 0.75rem; line-height: 1.2; }
+.section-sub { font-size: 1.05rem; color: var(--fog); line-height: 1.7; max-width: 720px; }
+
+/* ─── MATURITY ───────────────────────────────────────────── */
+.maturity-grid { display: flex; gap: 0; margin-top: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+.maturity-stage {
+  flex: 1; padding: 1.5rem 1.1rem; cursor: pointer;
+  border-right: 1px solid rgba(255,255,255,0.15); transition: all 0.2s;
+  position: relative;
+}
+.maturity-stage:last-child { border-right: none; }
+.maturity-stage:hover { filter: brightness(1.08); }
+.maturity-num { font-size: 1.6rem; font-weight: 800; opacity: 0.35; }
+.maturity-label { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; margin: 0.4rem 0 0.3rem; }
+.maturity-fund { font-size: 0.72rem; opacity: 0.8; margin-bottom: 0.7rem; font-weight: 600; }
+.maturity-desc { font-size: 0.82rem; line-height: 1.5; opacity: 0.9; }
+.maturity-badge {
+  display: inline-block; margin-top: 0.7rem; font-size: 0.68rem; font-weight: 700;
+  padding: 0.2rem 0.55rem; border-radius: 20px; letter-spacing: 0.04em;
+}
+
+/* ─── MODEL NAV TABS ─────────────────────────────────────── */
+.model-tabs {
+  display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;
+  border-bottom: 2px solid var(--border); padding-bottom: 0;
+}
+.model-tab {
+  padding: 0.7rem 1.4rem; border: none; border-radius: 8px 8px 0 0;
+  font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  background: transparent; color: var(--grey); border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+.model-tab:hover { color: var(--midnight); background: var(--lgrey); }
+.model-tab.active { color: var(--white); border-bottom-color: transparent; }
+
+/* ─── MODEL PANEL ────────────────────────────────────────── */
+.model-panel { display: none; }
+.model-panel.active { display: block; }
+
+.model-header {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem;
+  color: var(--white);
+}
+.model-number { font-size: 4rem; font-weight: 900; opacity: 0.2; line-height: 1; }
+.model-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.3rem; }
+.model-subtitle { font-size: 1rem; opacity: 0.85; line-height: 1.6; }
+
+/* ─── MATURITY FIT BAR ───────────────────────────────────── */
+.maturity-fit { margin-bottom: 1.5rem; }
+.maturity-fit-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--grey); margin-bottom: 0.75rem; }
+.maturity-fit-row { display: flex; gap: 0.4rem; }
+.maturity-fit-cell {
+  flex: 1; padding: 0.6rem; border-radius: 6px; text-align: center;
+  font-size: 0.75rem; font-weight: 600; border: 2px solid var(--border);
+  color: var(--muted); background: var(--lgrey); transition: all 0.2s;
+}
+.maturity-fit-cell.fit { border-color: transparent; color: var(--white); }
+.maturity-fit-cell.partial { border-style: dashed; }
+
+/* ─── THREE-COLUMN GRID ──────────────────────────────────── */
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+
+.info-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.info-card-header {
+  padding: 0.75rem 1rem; font-size: 0.72rem; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 700; color: var(--white);
+}
+.info-card-body { padding: 1rem; }
+.info-item { display: flex; gap: 0.5rem; align-items: flex-start; margin-bottom: 0.7rem; }
+.info-item:last-child { margin-bottom: 0; }
+.info-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem; }
+.info-text { font-size: 0.88rem; color: var(--dkgrey); line-height: 1.5; }
+
+/* ─── CAPABILITIES TABLE ─────────────────────────────────── */
+.cap-table { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem; }
+.cap-table-head { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.cap-col-head { padding: 0.75rem 1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--white); }
+.cap-col-head.third { background: var(--fog); }
+.cap-row { display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--border); }
+.cap-cell { padding: 0.6rem 1rem; font-size: 0.85rem; color: var(--dkgrey); line-height: 1.5; border-right: 1px solid var(--border); }
+.cap-cell:last-child { border-right: none; }
+
+/* ─── CHECKLIST ──────────────────────────────────────────── */
+.checklist {
+  background: var(--lgrey); border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;
+}
+.checklist-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--midnight); margin-bottom: 0.75rem; }
+.checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+.check-item { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; color: var(--graphite); }
+.check-box { width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; margin-top: 1px; background: var(--white); }
+
+/* ─── THIRD PARTY ────────────────────────────────────────── */
+.third-party { background: #EDF3F2; border: 1px solid var(--sage); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.third-party-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--midnight); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+.third-party-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+.third-party-card { background: var(--white); border: 1px solid var(--sage); border-radius: 8px; padding: 0.75rem; }
+.third-party-role { font-size: 0.72rem; font-weight: 700; color: var(--fog); text-transform: uppercase; letter-spacing: 0.06em; }
+.third-party-name { font-size: 0.88rem; font-weight: 600; color: var(--midnight); margin: 0.2rem 0; }
+.third-party-why { font-size: 0.8rem; color: var(--fog); line-height: 1.45; }
+
+/* ─── CASE STUDIES ───────────────────────────────────────── */
+.cases-title { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: var(--midnight); margin-bottom: 1rem; padding-top: 0.5rem; border-top: 2px solid var(--border); }
+.case-tabs { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+.case-tab { padding: 0.4rem 0.9rem; border: 1px solid var(--border); border-radius: 20px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s; background: var(--white); color: var(--fog); }
+.case-tab.active { background: var(--midnight); color: var(--white); border-color: var(--midnight); }
+.case-panel { display: none; }
+.case-panel.active { display: block; }
+.case-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.case-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 1.25rem 1.5rem; background: var(--lgrey); border-bottom: 1px solid var(--border); }
+.case-company { font-size: 1rem; font-weight: 700; color: var(--midnight); }
+.case-subtitle { font-size: 0.85rem; color: var(--fog); margin-top: 0.2rem; }
+.case-geo { font-size: 0.75rem; background: var(--midnight); color: var(--white); padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 600; }
+.case-ucb-tag { font-size: 0.72rem; background: var(--blue); color: var(--white); padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 700; }
+.case-body { padding: 1.25rem 1.5rem; }
+.case-body h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--blue); margin: 0.9rem 0 0.35rem; }
+.case-body h4:first-child { margin-top: 0; }
+.case-body p { font-size: 0.88rem; color: var(--graphite); line-height: 1.6; }
+.case-body .source { font-size: 0.75rem; color: var(--muted); margin-top: 1rem; font-style: italic; }
+.outcome-pill { display: inline-block; background: rgba(82,96,254,0.1); color: var(--blue); font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; margin: 0.2rem 0.2rem 0 0; }
+
+/* ─── DECISION GUIDE ─────────────────────────────────────── */
+.decision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.decision-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.2s;
+}
+.decision-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.decision-q { font-size: 1rem; font-weight: 700; color: var(--midnight); margin-bottom: 0.5rem; }
+.decision-a { font-size: 0.85rem; color: var(--fog); line-height: 1.6; }
+.decision-model { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 20px; color: var(--white); }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  background: var(--midnight); color: rgba(200,226,250,0.75); padding: 2.5rem 2rem;
+  font-size: 0.85rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.12);
+}
+footer strong { color: var(--sky); }
+
+/* ─── UTILITIES ──────────────────────────────────────────── */
+.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.tag { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: 4px; }
+.vision-box {
+  background: var(--midnight); color: var(--white); border-radius: 10px;
+  padding: 1.5rem; margin-bottom: 1.5rem; position: relative; overflow: hidden;
+}
+.vision-box::before {
+  content: '"'; position: absolute; top: -0.5rem; left: 1rem;
+  font-size: 6rem; color: var(--sky); opacity: 0.12; font-family: Georgia, serif; line-height: 1;
+}
+.vision-text { font-size: 1.05rem; line-height: 1.7; position: relative; }
+.vision-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--sky); margin-bottom: 0.5rem; }
+
+/* ─── MODEL COLORS (Normative palette) ───────────────────── */
+/* Model 1: Blue #5260FE  Model 2: Midnight #252FA1  Model 3: Sage #B3C8C5  Model 4: Fog #7E9492 */
+.c-blue   { background: var(--blue); color: #fff; }
+.c-teal   { background: var(--midnight); color: #fff; }   /* model-2: midnight */
+.c-purple { background: var(--sage); color: var(--graphite); } /* model-3: sage (dark text) */
+.c-gold   { background: var(--fog); color: #fff; }             /* model-4: fog */
+.c-blue-light { background: var(--sky); }
+
+.b-blue   { border-left: 4px solid var(--blue); }
+.b-teal   { border-left: 4px solid var(--midnight); }
+.b-purple { border-left: 4px solid var(--sage); }
+.b-gold   { border-left: 4px solid var(--fog); }
+.b-rose   { border-left: 4px solid var(--blue); }   /* remap rose → blue */
+
+@media (max-width: 768px) {
+  .three-col, .two-col, .decision-grid, .checklist-grid { grid-template-columns: 1fr; }
+  .maturity-grid { flex-direction: column; }
+  .hero-title { font-size: 2.2rem; }
+  nav .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-brand">UCB · DCTx <span>North Star</span></div>
+  <div class="nav-links">
+    <a href="#overview" class="active">Overview</a>
+    <a href="#maturity">Startup Maturity</a>
+    <a href="#models">Partnership Models</a>
+    <a href="#decision">Decision Guide</a>
+  </div>
+  <span class="nav-badge">V.1 Draft · May 2026</span>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────── -->
+<section id="overview" style="padding:0">
+<div id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">UCB · Digital Health &amp; Care Transformation Partnership Framework</div>
+    <h1 class="hero-title">UCB · DCTx<br><span>North Star</span></h1>
+    <p class="hero-sub">A decision framework for UCB teams identifying, evaluating, and structuring partnerships with digital health companies committed to transforming care – for patients, clinicians, and health systems. Built exclusively for partnerships that drive <strong style="color:var(--sky)">digital and care transformation</strong>. Not for vendors, agencies, or professional services engagements.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Partnership models</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-label">Real-world case studies</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">32</div><div class="hero-stat-label">Must-align decision checkpoints</div></div>
+    </div>
+    <div class="hero-models">
+      <a href="#models" class="hero-model-pill" style="background:rgba(255,255,255,0.10);color:#fff;border:1.5px solid rgba(255,255,255,0.28)" onclick="selectModel(0)"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#5260FE;flex-shrink:0;margin-right:2px"></span>01 · RWE Evidence</a>
+      <a href="#models" class="hero-model-pill" style="background:rgba(255,255,255,0.10);color:#fff;border:1.5px solid rgba(255,255,255,0.28)" onclick="selectModel(1)"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#818CF8;flex-shrink:0;margin-right:2px"></span>02 · Commercial G2M</a>
+      <a href="#models" class="hero-model-pill" style="background:rgba(255,255,255,0.10);color:#fff;border:1.5px solid rgba(255,255,255,0.28)" onclick="selectModel(2)"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#B3C8C5;flex-shrink:0;margin-right:2px"></span>03 · Ecosystem Enabler</a>
+      <a href="#models" class="hero-model-pill" style="background:rgba(255,255,255,0.10);color:#fff;border:1.5px solid rgba(255,255,255,0.28)" onclick="selectModel(3)"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#7E9492;flex-shrink:0;margin-right:2px"></span>04 · Equity / Investment</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ─── WHAT IT IS ─────────────────────────────────────────── -->
+<section id="what" style="background:white; padding:3.5rem 2rem">
+<div class="section-inner">
+  <div class="section-label">What is the North Star?</div>
+  <h2 class="section-title">A menu of partnership models</h2>
+  <div style="background:linear-gradient(135deg,#1a1a2e,#252FA1);border-radius:12px;padding:1.5rem 2rem;margin-bottom:1.75rem;color:white;display:flex;gap:2rem;align-items:center;flex-wrap:wrap">
+    <div style="flex:1;min-width:220px">
+      <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:0.4rem">Why the North Star exists</div>
+      <div style="font-size:2.6rem;font-family:'Anton',sans-serif;font-weight:400;color:#FF6B6B;line-height:1">60%</div>
+      <div style="font-size:0.88rem;color:rgba(200,226,250,0.85);line-height:1.5;margin-top:0.3rem">of pharma–digital health partnerships fail – the #1 cause is no clear partnership strategy at inception.</div>
+      <div style="font-size:0.72rem;color:rgba(200,226,250,0.5);margin-top:0.4rem;font-style:italic">smartpatient / pharmaphorum synthesis, 2024</div>
+    </div>
+    <div style="flex:2;min-width:280px">
+      <div style="font-size:0.85rem;color:rgba(200,226,250,0.85);line-height:1.7;margin-bottom:0.75rem">High-profile cautionary tales reinforce the stakes: <strong style="color:white">Pear Therapeutics</strong> (bankrupt 2023, despite a Novartis partnership) and <strong style="color:white">Proteus Digital Health</strong> (bankrupt 2019, despite FDA approval and Otsuka co-launch) both had validated technology – and neither had a watertight partnership strategy or sustainable commercial model.</div>
+      <div style="font-size:0.85rem;color:rgba(200,226,250,0.85);line-height:1.7">The UCB · DCTx North Star exists to close that gap – giving teams a structured, repeatable approach to choosing the right partner, structuring the right terms, and knowing when to scale or stop.</div>
+    </div>
+  </div>
+  <p class="section-sub" style="margin-bottom:1.5rem">The UCB · DCTx North Star is a practical decision framework that helps UCB teams choose, structure, and sustain partnerships with digital health companies at any maturity stage. It does not create new bureaucracy – it removes the ambiguity that slows partnerships down and replaces ad-hoc decisions with a repeatable, defensible process.</p>
+  <div style="display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap">
+    <div style="flex:1;min-width:220px;background:var(--midnight);border-radius:10px;padding:1.1rem 1.3rem;color:white">
+      <div style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:0.45rem">✓ A Partnership</div>
+      <p style="font-size:0.88rem;line-height:1.6;color:rgba(200,226,250,0.88);margin:0">Both sides have <strong style="color:white">skin in the game</strong>. Mutual risk. Mutual upside. Shared accountability for outcomes. Both parties bring something the other cannot replicate alone – and both stand to gain or lose from how the partnership performs.</p>
+    </div>
+    <div style="flex:1;min-width:220px;background:var(--grey);border:1.5px solid var(--border);border-radius:10px;padding:1.1rem 1.3rem">
+      <div style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--fog);margin-bottom:0.45rem">✕ A Vendor Relationship</div>
+      <p style="font-size:0.88rem;line-height:1.6;color:var(--graphite);margin:0">One party implements a strategy the other defines. <strong>Transactional. Fee-for-service.</strong> The vendor delivers a deliverable; UCB retains all accountability for outcomes. This framework does not apply to vendor or agency relationships – those are procurement decisions, not partnership decisions.</p>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="info-card">
+      <div class="info-card-header c-blue">✓ &nbsp;What it WILL do</div>
+      <div class="info-card-body">
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Give you a menu of 4 proven collaboration models to choose from based on your startup's maturity and your team's goals</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Define clear vision, requirements, value exchange, and capabilities for each model</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Show you which third-party partners may be needed to close capability gaps</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Provide real case studies – one from UCB and two from top pharma competitors – for each model</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Help commercial, brand, finance, and legal teams align before a partnership conversation begins</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Give you the language to write a fair-value-exchange contract that gets approved</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Provide a legal on-ramp – each model includes pre-scoped compliance considerations so legal is a partner in the process from Day 1, not a final gate that defaults to "no"</div></div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="background:var(--fog)">✕ &nbsp;What it will NOT do</div>
+      <div class="info-card-body">
+        <div class="info-item"><div class="info-dot" style="background:#C8D4D2"></div><div class="info-text" style="color:var(--graphite)">Replace existing UCB compliance, legal, or stage gate processes</div></div>
+        <div class="info-item"><div class="info-dot" style="background:#C8D4D2"></div><div class="info-text" style="color:var(--graphite)">Make the decision for you – it guides, you decide</div></div>
+        <div class="info-item"><div class="info-dot" style="background:#C8D4D2"></div><div class="info-text" style="color:var(--graphite)">Treat all partnerships the same regardless of TA, maturity, or strategic fit</div></div>
+        <div class="info-item"><div class="info-dot" style="background:#C8D4D2"></div><div class="info-text" style="color:var(--graphite)">Add another framework that sits in a drawer – it's built to be used in live conversations</div></div>
+        <div class="info-item"><div class="info-dot" style="background:#C8D4D2"></div><div class="info-text" style="color:var(--graphite)">Be static – it evolves with each version and activation workshop</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#FFF1F2;border:1.5px solid #FECDD3;border-radius:12px;padding:1.5rem 2rem;margin-bottom:1.25rem">
+    <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#BE123C;margin-bottom:0.75rem">✕ &nbsp;What UCB is NOT looking for in a partner approach</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+      <div style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#E11D48;font-size:1rem;flex-shrink:0;margin-top:0.05rem">–</span><p style="font-size:0.88rem;color:#881337;line-height:1.5;margin:0"><strong>"We need your money."</strong> Capital is not the primary thing UCB offers. Partners who lead with a funding ask before demonstrating a clear problem-solution fit and strategic alignment will not get traction. UCB offers market access, clinical credibility, and evidence infrastructure – not a grant.</p></div>
+      <div style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#E11D48;font-size:1rem;flex-shrink:0;margin-top:0.05rem">–</span><p style="font-size:0.88rem;color:#881337;line-height:1.5;margin:0"><strong>"Here's our solution – what are you working on?"</strong> Partners who arrive with a finished product and expect UCB to find a use case for it. The right approach is the reverse: understand UCB's care transformation priorities, then show how your technology advances them.</p></div>
+      <div style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#E11D48;font-size:1rem;flex-shrink:0;margin-top:0.05rem">–</span><p style="font-size:0.88rem;color:#881337;line-height:1.5;margin:0"><strong>Generic digital wellness or professional services.</strong> This framework is not for consulting firms, marketing agencies, or app vendors delivering general wellness content. Partnerships must involve a digital health company with a product driving measurable care outcomes.</p></div>
+      <div style="display:flex;gap:0.6rem;align-items:flex-start"><span style="color:#E11D48;font-size:1rem;flex-shrink:0;margin-top:0.05rem">–</span><p style="font-size:0.88rem;color:#881337;line-height:1.5;margin:0"><strong>Pilots with no exit plan.</strong> Partners who cannot define what "success" looks like at 3, 6, or 12 months – or who assume UCB will keep funding indefinitely without measurable outcomes – are not partnership-ready. The North Star requires a pre-agreed scale/continue/stop framework before any pilot begins.</p></div>
+    </div>
+  </div>
+
+  <div style="background:#FFF8E1;border:1.5px solid #FCD34D;border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:2rem;display:flex;gap:1rem;align-items:flex-start">
+    <span style="font-size:1.4rem;flex-shrink:0;margin-top:0.1rem">⚖️</span>
+    <div>
+      <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#92400E;margin-bottom:0.4rem">Legal &amp; Risk Tolerance – Start Here</div>
+      <p style="font-size:0.88rem;color:#78350F;line-height:1.6;margin:0">UCB's legal and compliance teams default to "no" when approached without context. The North Star is designed to change that dynamic: each partnership model includes pre-scoped must-align requirements, data governance guardrails, and IP scope boundaries. <strong>Bring legal in at the model selection stage</strong> – not after a partner has been engaged. The question to ask is not "can we do this?" but "how do we structure this so we can?" – and that conversation starts here.</p>
+    </div>
+  </div>
+  <!-- Cross-functional value -->
+  <div class="section-label" style="margin-top:2.5rem">Why every UCB function benefits</div>
+  <div class="three-col" style="margin-top:1rem">
+    <div class="info-card" style="border-left:4px solid var(--blue)">
+      <div class="info-card-header" style="background:var(--blue)">Marketing &amp; Brand</div>
+      <div class="info-card-body">
+        <div style="background:rgba(82,96,254,0.07);border-left:3px solid var(--blue);border-radius:0 6px 6px 0;padding:0.7rem 0.95rem;margin-bottom:0.85rem;font-style:italic;font-size:0.87rem;line-height:1.65;color:var(--graphite)">"When we choose partnerships that generate the patient outcomes my team cares about, I'm excited to engage – because I can turn that success into communication tactics that help us achieve our brand goals."
+          <div style="font-size:0.7rem;font-style:normal;margin-top:0.35rem;color:var(--blue);font-weight:700;letter-spacing:0.03em">— Melinda Mason, Head of Marketing, Epilepsy &amp; Rare Syndromes, UCB</div>
+        </div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Partnerships pre-screened for outcome-marketing alignment</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Patient success stories become brand campaign evidence</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Brand budget committed with confidence in the ROI narrative</div></div>
+      </div>
+    </div>
+    <div class="info-card" style="border-left:4px solid var(--sage)">
+      <div class="info-card-header" style="background:var(--sage);color:var(--graphite)">Finance &amp; Budget</div>
+      <div class="info-card-body">
+        <p style="font-size:0.9rem;color:var(--graphite);line-height:1.6;margin-bottom:0.75rem">Each model includes a standardized fair value exchange structure. Finance teams can evaluate and approve budget requests against a consistent framework – not a novel deal every time.</p>
+        <div class="info-item"><div class="info-dot" style="background:var(--fog)"></div><div class="info-text">Green/brown money framing maps directly to P&amp;L impact</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--fog)"></div><div class="info-text">Standardized value exchange = faster investment committee approvals</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--fog)"></div><div class="info-text">Budget submission narratives become templatable per model</div></div>
+      </div>
+    </div>
+    <div class="info-card" style="border-left:4px solid var(--midnight)">
+      <div class="info-card-header" style="background:var(--midnight)">Legal &amp; Compliance</div>
+      <div class="info-card-body">
+        <p style="font-size:0.9rem;color:var(--graphite);line-height:1.6;margin-bottom:0.75rem">Each model includes pre-scoped must-align requirements: data governance, IP ownership, exclusivity scope, and compliance guardrails – built in before the contract conversation begins.</p>
+        <div class="info-item"><div class="info-dot" style="background:var(--midnight)"></div><div class="info-text">Data rights and IP terms pre-defined by partnership type</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--midnight)"></div><div class="info-text">Contracts drafted faster with standard compliance checklist</div></div>
+        <div class="info-item"><div class="info-dot" style="background:var(--midnight)"></div><div class="info-text">Reduces back-and-forth by aligning on model before legal drafting</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD vs PARTNER -->
+  <div style="margin-top:2.5rem">
+    <div class="section-label">Before you choose a model</div>
+    <h3 style="font-size:1.4rem;font-weight:800;color:var(--midnight);margin-bottom:0.5rem">Build, Partner, or Buy?</h3>
+    <p style="font-size:0.95rem;color:var(--fog);line-height:1.7;margin-bottom:1.25rem;max-width:720px">Before selecting a partnership model, UCB teams must first answer a prior question: <em>should we build this capability in-house, partner for it, or acquire/invest in it?</em> Defaulting to a partnership when the right answer is "build" leads to IP loss, dependency, and capability gaps. <div style="background:rgba(37,47,161,0.06);border-left:3px solid var(--midnight);border-radius:0 6px 6px 0;padding:0.7rem 0.95rem;margin-top:0.6rem;font-style:italic;font-size:0.87rem;line-height:1.65;color:var(--graphite)">"We are a drug company. We are not a tech company. We have pretended to be a tech company multiple times – and our internal capabilities just are not designed to support technology as its own intervention."
+  <div style="font-size:0.7rem;font-style:normal;margin-top:0.35rem;color:var(--midnight);font-weight:700;letter-spacing:0.03em">— Kim Moran, Strategic Partnerships, UCB</div>
+</div></p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:0.75rem">
+      <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.25rem;border-top:4px solid var(--blue)">
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:0.6rem">🔧 Build In-House</div>
+        <p style="font-size:0.85rem;color:var(--graphite);line-height:1.6;margin:0 0 0.75rem">When the capability is <strong>core to UCB's long-term competitive advantage</strong> and requires deep integration with drug development, HEOR, or medical affairs processes.</p>
+        <div style="font-size:0.78rem;color:var(--fog);line-height:1.5"><strong style="color:var(--midnight)">Examples:</strong> patient journey analytics, internal HEOR modeling, clinical trial design capabilities, HCP engagement infrastructure.</div>
+      </div>
+      <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.25rem;border-top:4px solid var(--midnight)">
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--midnight);margin-bottom:0.6rem">🤝 Partner</div>
+        <p style="font-size:0.85rem;color:var(--graphite);line-height:1.6;margin:0 0 0.75rem">When the capability requires <strong>speed, specialist expertise, or patient-facing technology</strong> that UCB cannot build at pace – but where UCB contributes complementary value (clinical networks, payer access, data infrastructure).</p>
+        <div style="font-size:0.78rem;color:var(--fog);line-height:1.5"><strong style="color:var(--midnight)">Examples:</strong> digital biomarker platforms, care navigation apps, DTx products, RWE data capture tools. → Use one of the 4 North Star models.</div>
+      </div>
+      <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.25rem;border-top:4px solid var(--fog)">
+        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--fog);margin-bottom:0.6rem">💰 Buy / Invest</div>
+        <p style="font-size:0.85rem;color:var(--graphite);line-height:1.6;margin:0 0 0.75rem">When the capability is <strong>strategically critical but time-to-build is prohibitive</strong> – and the market has a validated company that UCB can acquire or take a strategic stake in, with defined access rights.</p>
+        <div style="font-size:0.78rem;color:var(--fog);line-height:1.5"><strong style="color:var(--midnight)">Examples:</strong> first-mover disease monitoring platform in a priority therapeutic area, rare disease patient data lake. → Use Model 4 (Equity / Investment).</div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);font-style:italic">Rule of thumb: if UCB would not want to own or maintain the technology in 5 years, do not build it. If the capability requires a commercial partner's patient relationships or market access to deliver value, partner – don't replicate. If neither applies, it may be a vendor engagement, not a partnership.</p>
+  </div>
+
+  <!-- CROSS-FUNCTIONAL SEQUENCING -->
+  <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <div class="section-label">How to use this framework</div>
+    <h3 style="font-size:1.4rem;font-weight:800;color:var(--midnight);margin-bottom:0.5rem">Cross-functional engagement – in the right order</h3>
+    <p style="font-size:0.95rem;color:var(--fog);line-height:1.7;margin-bottom:1.5rem;max-width:720px">Multiple UCB leaders said "bring us in early" – but without a sequence, that creates paralysis. This is the recommended engagement order before any external partner conversation begins.</p>
+    <div style="display:flex;gap:0;align-items:stretch;flex-wrap:wrap">
+      <div style="flex:1;min-width:160px;background:var(--midnight);border-radius:10px 0 0 10px;padding:1.1rem 1rem;color:white;position:relative">
+        <div style="font-size:1.6rem;font-weight:900;opacity:0.2;line-height:1;margin-bottom:0.3rem">1</div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--sky);margin-bottom:0.35rem">DCTx / Strategy</div>
+        <p style="font-size:0.82rem;color:rgba(200,226,250,0.85);line-height:1.5;margin:0">Define the model fit and care transformation hypothesis. Confirm this is a partnership (not a vendor) and it maps to a North Star model.</p>
+      </div>
+      <div style="width:2px;background:white;flex-shrink:0;align-self:stretch"></div>
+      <div style="flex:1;min-width:160px;background:#1A2580;padding:1.1rem 1rem;color:white">
+        <div style="font-size:1.6rem;font-weight:900;opacity:0.2;line-height:1;margin-bottom:0.3rem">2</div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--sky);margin-bottom:0.35rem">Legal &amp; Compliance</div>
+        <p style="font-size:0.82rem;color:rgba(200,226,250,0.85);line-height:1.5;margin:0">Review the model's pre-scoped must-align requirements. Confirm data governance scope, IP boundaries, and risk window before any partner is approached.</p>
+      </div>
+      <div style="width:2px;background:white;flex-shrink:0;align-self:stretch"></div>
+      <div style="flex:1;min-width:160px;background:#243080;padding:1.1rem 1rem;color:white">
+        <div style="font-size:1.6rem;font-weight:900;opacity:0.2;line-height:1;margin-bottom:0.3rem">3</div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--sky);margin-bottom:0.35rem">Finance</div>
+        <p style="font-size:0.82rem;color:rgba(200,226,250,0.85);line-height:1.5;margin:0">Validate the fair value exchange structure. Confirm green/brown money framing and identify budget line before any partner receives a term sheet or LOI.</p>
+      </div>
+      <div style="width:2px;background:white;flex-shrink:0;align-self:stretch"></div>
+      <div style="flex:1;min-width:160px;background:#2D3A90;padding:1.1rem 1rem;color:white">
+        <div style="font-size:1.6rem;font-weight:900;opacity:0.2;line-height:1;margin-bottom:0.3rem">4</div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--sky);margin-bottom:0.35rem">Brand / Commercial</div>
+        <p style="font-size:0.82rem;color:rgba(200,226,250,0.85);line-height:1.5;margin:0">Commit to shared KPIs and a brand investment narrative. Define how partner outcomes map to brand goals before the commercial team is engaged.</p>
+      </div>
+      <div style="width:2px;background:white;flex-shrink:0;align-self:stretch"></div>
+      <div style="flex:1;min-width:160px;background:var(--blue);border-radius:0 10px 10px 0;padding:1.1rem 1rem;color:white">
+        <div style="font-size:1.6rem;font-weight:900;opacity:0.2;line-height:1;margin-bottom:0.3rem">5</div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--sky);margin-bottom:0.35rem">External Partner</div>
+        <p style="font-size:0.82rem;color:rgba(200,226,250,0.85);line-height:1.5;margin:0">Now engage the partner with a clear model, defined terms, confirmed budget, and pre-agreed KPIs. Not before.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ─── STARTUP MATURITY ───────────────────────────────────── -->
+<section id="maturity" style="background:var(--lgrey)">
+<div class="section-inner">
+  <div class="section-label">Startup Maturity Framework</div>
+  <h2 class="section-title">Know where your partner is before choosing a model</h2>
+  <p class="section-sub" style="margin-bottom:1.25rem">Digital health startups exist across a spectrum of maturity. The partnership model that works for a Series B commercial-stage company will fail with a pre-revenue prototype. The North Star maps each of its 4 models to the maturity stages where they create the most value – and flags where the risks are highest.</p>
+  <div class="maturity-grid">
+    <div class="maturity-stage" style="background:#1E3A5F;color:white">
+      <div class="maturity-num">1</div>
+      <div class="maturity-label">DISCOVERY</div>
+      <div class="maturity-fund">Pre-Seed / Bootstrapped</div>
+      <div class="maturity-desc">Proof of concept or early prototype. No revenue. Building product-market fit. Clinical evidence is a hypothesis.</div>
+      <div class="maturity-badge" style="background:rgba(255,255,255,0.15);color:white">High Risk / High Option Value</div>
+    </div>
+    <div class="maturity-stage" style="background:#1A4A7A;color:white">
+      <div class="maturity-num">2</div>
+      <div class="maturity-label">VALIDATION</div>
+      <div class="maturity-fund">Seed / Series A</div>
+      <div class="maturity-desc">First pilots complete. MVP validated. Early clinical evidence. Seeking anchor partnerships to build credibility and real-world evidence.</div>
+      <div class="maturity-badge" style="background:rgba(82,96,254,0.3);color:#C8E2FA">Best for Model 1 &amp; 4</div>
+    </div>
+    <div class="maturity-stage" style="background:#155E75;color:white">
+      <div class="maturity-num">3</div>
+      <div class="maturity-label">GROWTH</div>
+      <div class="maturity-fund">Series A / B</div>
+      <div class="maturity-desc">Product-market fit established. Revenue growing. Active commercial conversations with payers or health systems. Needs distribution and evidence scale.</div>
+      <div class="maturity-badge" style="background:rgba(0,163,163,0.4);color:#6EE7E7">Best for Model 1, 2 &amp; 3</div>
+    </div>
+    <div class="maturity-stage" style="background:#134E4A;color:white">
+      <div class="maturity-num">4</div>
+      <div class="maturity-label">COMMERCIAL</div>
+      <div class="maturity-fund">Series B / C</div>
+      <div class="maturity-desc">Go-to-market underway. Reimbursement strategy in motion. 81%+ recurring revenue.<sup style="font-size:0.65em;font-weight:700;vertical-align:super;line-height:0">1</sup> Seeking pharma co-launch or distribution.</div>
+      <div class="maturity-badge" style="background:rgba(13,148,136,0.4);color:#99F6E4">Best for Model 2 &amp; 3</div>
+    </div>
+    <div class="maturity-stage" style="background:#1E1B4B;color:white">
+      <div class="maturity-num">5</div>
+      <div class="maturity-label">SCALE</div>
+      <div class="maturity-fund">Series C+ / Pre-IPO</div>
+      <div class="maturity-desc">Proven at scale. Established payer contracts or reimbursement. Potential acquisition target. Strategic equity conversation or ecosystem convening role.</div>
+      <div class="maturity-badge" style="background:rgba(124,58,237,0.4);color:#C4B5FD">Best for Model 3 &amp; 4</div>
+    </div>
+  </div>
+  <p style="margin-top:1rem;font-size:0.8rem;color:var(--muted)">Source: Rock Health Digital Health Funding Year-End Report (2025); Galen Growth Pharma Digital Health Innovation Index (2025); Normative analysis of 30+ pharma-digital partnerships</p>
+</div>
+</section>
+
+<!-- ─── PARTNERSHIP MODELS ─────────────────────────────────── -->
+<section id="models" style="background:white">
+<div class="section-inner">
+  <div class="section-label">The North Star</div>
+  <h2 class="section-title">Four partnership models for digital health</h2>
+  <p class="section-sub" style="margin-bottom:2rem">Select a model below to explore its vision, requirements, capabilities, third-party partners, and real case studies.</p>
+
+  <div class="model-tabs" id="modelTabs">
+    <button class="model-tab active" style="background:var(--blue);color:white" onclick="selectModel(0)">01 · RWE Evidence</button>
+    <button class="model-tab" onclick="selectModel(1)" style="background:var(--midnight);color:white">02 · Commercial G2M</button>
+    <button class="model-tab" onclick="selectModel(2)" style="background:var(--sage);color:var(--graphite)">03 · Ecosystem Enabler</button>
+    <button class="model-tab" onclick="selectModel(3)" style="background:var(--fog);color:white">04 · Equity / Investment</button>
+  </div>
+
+  <!-- ═══ MODEL 1: RWE ══════════════════════════════════════ -->
+  <div class="model-panel active" id="panel-0">
+    <div class="model-header" style="background:linear-gradient(135deg,#252FA1,#5260FE)">
+      <div class="model-number">01</div>
+      <div>
+        <div class="model-title">RWE Evidence Partnership</div>
+        <div class="model-subtitle">Pharma and digital health co-design clinical evidence pathways to validate real-world outcomes, support reimbursement, and build regulatory confidence.</div>
+      </div>
+    </div>
+
+    <div class="maturity-fit">
+      <div class="maturity-fit-title">Startup Maturity Fit</div>
+      <div class="maturity-fit-row">
+        <div class="maturity-fit-cell" style="background:var(--grey);color:#9AAEAC;border-color:var(--border)">1 · Discovery<br><small>Too early – no clinical data</small></div>
+        <div class="maturity-fit-cell fit c-blue">2 · Validation<br><small>✓ Ideal – anchor evidence study</small></div>
+        <div class="maturity-fit-cell fit c-blue">3 · Growth<br><small>✓ Strong – scale existing evidence</small></div>
+        <div class="maturity-fit-cell partial" style="border-color:var(--blue);color:var(--blue)">4 · Commercial<br><small>◑ Possible – if evidence gaps remain</small></div>
+        <div class="maturity-fit-cell" style="background:var(--grey);color:#9AAEAC;border-color:var(--border)">5 · Scale<br><small>Low need – evidence likely complete</small></div>
+      </div>
+    </div>
+
+    <div class="vision-box">
+      <div class="vision-label">Partnership Vision</div>
+      <div class="vision-text">UCB and the partner co-generate credible real-world evidence that proves clinical and economic value – unlocking reimbursement, building payer confidence, and creating a shared scientific asset that advances both parties' clinical and commercial goals. Neither party builds this alone: UCB contributes disease expertise, patient networks, and HEOR modeling; the partner contributes longitudinal data, continuous monitoring, and digital biomarkers unavailable from traditional clinical sources.</div>
+    </div>
+
+    <div class="three-col">
+      <div class="info-card">
+        <div class="info-card-header c-blue">UCB Requires from Partner</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Validated or pilotable clinical tool with measurable patient outcome data</div></div>
+          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Agreement to co-design evidence framework (not just data sharing)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Data governance &amp; IP ownership agreed before data collection begins</div></div>
+          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">IRB/ethics compliance for all patient data usage</div></div>
+          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Commitment to publish or disseminate results jointly</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#252FA1">Partner Requires from UCB</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">UCB co-design of evidence endpoints tied to payer evidence standards</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Access to UCB's payer and regulatory relationships (NICE, CMS, EU HTA bodies)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Financial or in-kind support for study design and patient recruitment</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">UCB clinical network and site access</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Credible pharma co-author on publications (reimbursement credibility)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text"><strong>A path to sustainable payer revenue</strong> – UCB's relationships with CMS, NICE, and EU HTA bodies represent the most direct route to reimbursement coverage a digital health company can access. For most partners, UCB's involvement is the primary mechanism for converting clinical evidence into recurring revenue.</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#7E9492">Constraints to Resolve First</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Patient data privacy: UCB cannot expose patient data without watertight safeguards</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Evidence endpoints must be agreed before data collection – payer thresholds vary significantly between US, UK (NICE), and EU HTA bodies</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">If the tool is SaMD (Software as Medical Device), regulatory pathway must be clear before UCB co-invests in evidence generation</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>AMCP 2025 payer-grade evidence standards now apply:</strong> AMCP's updated RWE assessment framework (2025) establishes minimum evidence requirements for payer coverage decisions. Evidence endpoints must be designed to meet these standards from the outset – partnerships building RWE that doesn't meet AMCP criteria will not convert to reimbursement coverage. Engage a payer advisory firm at study design stage, not after data collection.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-table">
+      <div class="cap-table-head">
+        <div class="cap-col-head c-blue">UCB Brings</div>
+        <div class="cap-col-head" style="background:#252FA1">Digital Partner Brings</div>
+        <div class="cap-col-head third">Potential Third-Party Fills</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">RWE design expertise and HEOR modeling</div>
+        <div class="cap-cell">Longitudinal real-world patient outcome data</div>
+        <div class="cap-cell">Academic Medical Center (site access, IRB)</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">UCB clinical network (investigators, sites)</div>
+        <div class="cap-cell">Continuous monitoring or digital biomarker platform</div>
+        <div class="cap-cell">CRO for study design and operations</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Payer and regulatory relationships (CMS, NICE)</div>
+        <div class="cap-cell">Patient engagement and retention capabilities</div>
+        <div class="cap-cell">Payer advisory firm (evidence threshold expertise)</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Medical affairs and disease area credibility</div>
+        <div class="cap-cell">Clinical or behavioral science validation team</div>
+        <div class="cap-cell">Patient advocacy group (PAG) for recruitment</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Co-authorship and publication infrastructure</div>
+        <div class="cap-cell">Real-time data capture and analytics platform</div>
+        <div class="cap-cell">Health economics consulting firm</div>
+      </div>
+      <div class="cap-row" style="background:rgba(82,96,254,0.04)">
+        <div class="cap-cell"><strong>End-to-end risk mitigation expertise</strong> – UCB spends ~$40M/year understanding patient journeys and has navigated every step from drug discovery to commercial launch. This de-risks the regulatory, market access, and compliance path in ways startups fundamentally cannot replicate alone.</div>
+        <div class="cap-cell">–</div>
+        <div class="cap-cell">–</div>
+      </div>
+    </div>
+
+    <div class="third-party">
+      <div class="third-party-title">⚠️ &nbsp;When you may need a third partner</div>
+      <div class="third-party-grid">
+        <div class="third-party-card"><div class="third-party-role">If UCB lacks</div><div class="third-party-name">IRB-approved study site access</div><div class="third-party-why">→ Bring in an Academic Medical Center with relevant disease expertise as co-investigator</div></div>
+        <div class="third-party-card"><div class="third-party-role">If partner lacks</div><div class="third-party-name">Evidence health economics expertise</div><div class="third-party-why">→ Engage a specialist HEOR firm to model the payer value dossier</div></div>
+        <div class="third-party-card"><div class="third-party-role">If both lack</div><div class="third-party-name">Patient recruitment at scale</div><div class="third-party-why">→ Partner with a relevant patient advocacy group (PAG) for facilitated patient access</div></div>
+        <div class="third-party-card"><div class="third-party-role">If funding gap exists</div><div class="third-party-name">Study co-funding (non-profit model)</div><div class="third-party-why">→ Multi-pharma consortium model — where multiple pharma companies share costs for a shared clinical infrastructure asset</div></div>
+      </div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title">Must-Align Before Engaging</div>
+      <div class="checklist-grid">
+        <div class="check-item"><div class="check-box"></div><span>Evidence endpoints agreed and tied to payer submission requirements</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Data sharing agreement and IP ownership executed</span></div>
+        <div class="check-item"><div class="check-box"></div><span>IRB/ethics compliance plan documented</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Payer and regulatory stakeholders identified</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Publication and dissemination plan agreed (open vs. proprietary)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Funding model, milestones, and timeline confirmed</span></div>
+        <div class="check-item"><div class="check-box"></div><span>UCB asset alignment confirmed (which drug/product benefits?)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>SaMD regulatory classification confirmed if applicable</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Evidence endpoints validated against AMCP 2025 payer-grade RWE assessment standards before data collection begins</span></div>
+      </div>
+    </div>
+
+    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
+        <div style="width:28px;height:28px;border-radius:6px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <span style="color:white;font-size:0.85rem">⚖</span>
+        </div>
+        <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Pilot Governance – Scale / Continue / Stop</div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Agree on these decision gates <em>before</em> data collection begins. If the gate criteria are not met, the default decision is Stop – not "extend three more months."</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Scale</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Evidence endpoints met at pre-agreed statistical threshold</li>
+            <li>Payer review confirms dossier is submission-ready</li>
+            <li>Partner has demonstrated IRB/data compliance at scale</li>
+            <li>Joint publication or dissemination plan confirmed</li>
+          </ul>
+        </div>
+        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Continue</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Evidence trending positive but sample size not yet sufficient</li>
+            <li>One material gap remains (e.g., specific payer market not yet covered)</li>
+            <li>Continuation requires a defined new milestone – not open-ended</li>
+          </ul>
+        </div>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Stop</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Evidence endpoints not met after agreed study period</li>
+            <li>Data governance or IP disputes unresolved after 60 days</li>
+            <li>Payer explicitly confirms evidence is insufficient for submission</li>
+            <li>Partner has not fulfilled co-design or publication commitments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cases-title">REAL EXAMPLES – 3 CASE STUDIES</div>
+    <div class="case-tabs">
+      <button class="case-tab active" onclick="selectCase(this,'rwe')">UCB Example</button>
+      <button class="case-tab" onclick="selectCase(this,'rwe')">AstraZeneca × Huma</button>
+      <button class="case-tab" onclick="selectCase(this,'rwe')">Novartis MS-PATHS</button>
+    </div>
+    <div id="rwe-0" class="case-panel active">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">UCB × Beacon Biosignals</div><div class="case-subtitle">Epilepsy EEG RWE – Co-designing real-world evidence on seizure patterns</div></div><div><span class="case-ucb-tag">UCB EXAMPLE</span> <span class="case-geo">US / EU</span></div></div>
+        <div class="case-body">
+          <h4>Partnership Vision</h4><p>UCB engaged Beacon Biosignals to explore how ambulatory EEG data from its Dreem headband could generate real-world evidence on seizure patterns and treatment response – supporting clinical validation of remote monitoring and reimbursement pathways for UCB's epilepsy portfolio.</p>
+          <h4>What UCB Brought</h4><p>Epilepsy clinical network for patient recruitment, co-design of evidence framework with medical affairs, HEOR modeling to translate clinical findings into payer-facing economic arguments, and connections to payer and regulatory contacts that Beacon could not access alone.</p>
+          <h4>What Beacon Brought</h4><p>Proprietary ambulatory EEG technology (Dreem headband), longitudinal EEG data from 800+ patients not available anywhere else, digital biomarker capabilities for passive seizure detection, and a clinical science team.</p>
+          <h4>Key Learning</h4><p>Evidence design must align early with payer evidence thresholds – not post-data-collection. A shared data governance agreement must be the critical first step. Seizure monitoring accuracy was questioned at Digital Vibes workshop (May 2026) – validation evidence must be established before UCB co-invests at scale.</p>
+          <p style="margin-top:0.6rem;background:#FFF8E1;border:1px solid #FCD34D;border-radius:6px;padding:0.6rem 0.9rem;font-size:0.84rem;color:#92400E;line-height:1.6"><strong>⚠ Partnership status update:</strong> Beacon Biosignals was acquired by Medtronic in 2024. UCB should confirm the current partnership terms and data rights are still operative under Medtronic ownership before any new co-investment or evidence study is initiated.</p>
+          <p class="source">Source: UCB 3rd Epilepsy Digital Roundtable (Dec 2025); Beacon Biosignals company disclosures; Digital Vibes Workshop Summary (May 2026)</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">EEG digital biomarkers</span><span class="outcome-pill">RWE for payer submission</span><span class="outcome-pill">Remote monitoring validation</span></div>
+        </div>
+      </div>
+    </div>
+    <div id="rwe-1" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">AstraZeneca × Huma</div><div class="case-subtitle">Digital Biomarker RWE in Heart Failure – NHS payer submission</div></div><span class="case-geo">UK / EU</span></div>
+        <div class="case-body">
+          <h4>Partnership Vision</h4><p>AZ partnered with Huma (formerly Medopad) to deploy a digital monitoring platform for heart failure patients across NHS sites, collecting real-time patient-reported outcomes and medication adherence data to build an RWE dossier for NICE submissions and EU market access.</p>
+          <h4>What AZ Brought (UCB analogy)</h4><p>Payer and regulatory relationships (NICE, EU HTA), brand credibility with NHS prescribers skeptical of unproven digital tools, commercial infrastructure for HCP adoption facilitation, and HEOR modeling expertise to shape the payer value story.</p>
+          <h4>What Huma Brought (Partner analogy)</h4><p>Validated digital monitoring platform, real-time patient vitals and adherence data, technology for continuous data capture, and a team experienced in remote patient management.</p>
+          <h4>Key Learning for UCB</h4><p>The pharma company does not build the platform – it co-designs the evidence framework and provides market access expertise. This is directly replicable for UCB: use a digital partner's continuous monitoring platform to capture seizure data that UCB's HEOR team shapes into a payer submission.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">NICE-acknowledged RWE dossier</span><span class="outcome-pill">First NHS-approved digital companion</span><span class="outcome-pill">AZ brand differentiation</span></div>
+          <p class="source">Source: AstraZeneca × Huma partnership (2020); NICE technology appraisal guidance; BMJ Open Digital Health (2022)</p>
+        </div>
+      </div>
+    </div>
+    <div id="rwe-2" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">Novartis – MS-PATHS RWE Consortium</div><div class="case-subtitle">Multi-pharma RWE network with digital health and academic medical centers</div></div><span class="case-geo">US / Global</span></div>
+        <div class="case-body">
+          <h4>Partnership Vision</h4><p>Multiple pharma companies including Novartis co-funded the MS-PATHS network – a collaboration with academic medical centers and Flatiron Health to collect standardized real-world data on MS disease progression and treatment outcomes across 10,000+ patients.</p>
+          <h4>What Novartis Brought (UCB analogy)</h4><p>Investment in shared data infrastructure, disease area credibility, medical affairs co-authorship on publications, co-design of evidence framework aligned to regulatory and payer standards, and convening power to bring other pharma companies into shared cost structure.</p>
+          <h4>What Digital Partners Brought</h4><p>Flatiron Health contributed data infrastructure and analytics; academic medical centers contributed patient populations and investigator credibility; each pharma partner contributed disease expertise and payer insight.</p>
+          <h4>Key Learning for UCB</h4><p>Multi-party RWE is more credible to regulators than single-sponsor studies. UCB can adapt this model in epilepsy: convene a multi-stakeholder evidence consortium with digital health partners (Byteflies, Beacon), academic centers, and even other pharma companies (Takeda, Jazz) – sharing costs while gaining strategic RWE assets.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">30,000+ patient records</span><span class="outcome-pill">Foundation RWE dataset for regulatory submissions</span><span class="outcome-pill">Shared infrastructure cost</span></div>
+          <p class="source">Source: MS-PATHS Network publications (Neurology, 2019–2023); Flatiron Health case studies; Novartis investor disclosures</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODEL 2: COMMERCIAL G2M ══════════════════════════ -->
+  <div class="model-panel" id="panel-1">
+    <div class="model-header" style="background:linear-gradient(135deg,#1A2080,#252FA1)">
+      <div class="model-number">02</div>
+      <div>
+        <div class="model-title">Commercial G2M Partnership</div>
+        <div class="model-subtitle">Pharma and digital health jointly execute a go-to-market strategy – combining UCB's commercial infrastructure with a validated partner product to drive adoption among HCPs and patients.</div>
+      </div>
+    </div>
+
+    <div class="maturity-fit">
+      <div class="maturity-fit-title">Startup Maturity Fit</div>
+      <div class="maturity-fit-row">
+        <div class="maturity-fit-cell" style="background:var(--grey);color:#9AAEAC;border-color:var(--border)">1 · Discovery<br><small>Too early</small></div>
+        <div class="maturity-fit-cell" style="background:var(--grey);color:#9AAEAC;border-color:var(--border)">2 · Validation<br><small>Too early – not commercial-ready</small></div>
+        <div class="maturity-fit-cell partial" style="border-color:#252FA1;color:#252FA1">3 · Growth<br><small>◑ Possible if near-launch ready</small></div>
+        <div class="maturity-fit-cell fit c-teal">4 · Commercial<br><small>✓ Ideal – co-launch or co-distribute</small></div>
+        <div class="maturity-fit-cell fit c-teal">5 · Scale<br><small>✓ Strong – co-promotion or licensing</small></div>
+      </div>
+    </div>
+
+    <div class="vision-box" style="background:linear-gradient(135deg,#1A2080,#252FA1)">
+      <div class="vision-label">Partnership Vision</div>
+      <div class="vision-text">UCB co-launches, co-brands, or commercially supports a partner's validated product to drive HCP and patient adoption – in exchange for brand differentiation, patient engagement data, and measurable commercial benefit tied to the product's uptake and the drug it complements. The commercial team – including therapeutic area leads and field-facing roles – are enablers, not sellers: they open doors, they do not build pipelines for the startup.</div>
+    </div>
+
+    <div class="three-col">
+      <div class="info-card">
+        <div class="info-card-header c-teal">UCB Requires from Partner</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Product commercially ready or near-launch with proven clinical utility</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Compliant HCP engagement model agreed before commercial team involvement</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Brand/commercial alignment with UCB's therapeutic priorities (not generic wellness)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Revenue or value-sharing model approved by finance and legal before field activation</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Clear story on how partner adoption impacts UCB's drug KPIs (adherence, diagnosis, referrals)</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#1A2080">Partner Requires from UCB</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Commercial team access for co-promotion or HCP introductions (therapeutic area leads first, with broader commercial team engagement only after KPIs and compliance model are confirmed)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">UCB brand association for credibility with payers and providers</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Joint marketing investment commitment and shared targets</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Market access support for reimbursement negotiations (payer relationships)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Commercial operations and contract vehicles (MSA/SOW infrastructure)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text"><strong>A viable path to commercial sustainability</strong> – UCB's distribution infrastructure, HCP relationships, and payer credibility represent a path to recurring revenue that most digital health companies cannot build alone. Partners in this model are, in large part, looking for a sustainable commercial model – and UCB's co-promotion and market access capabilities are that model.</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#7E9492">Key Constraint</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Commercial team distraction risk:</strong>
+            <div style="background:rgba(37,47,161,0.07);border-left:3px solid #252FA1;border-radius:0 6px 6px 0;padding:0.65rem 0.9rem;margin-top:0.5rem;font-style:italic;font-size:0.85rem;line-height:1.6;color:var(--graphite)">"Do not involve the field team early unless we plan to do something with them and there's alignment – you put this in any field team and they're talking, it's going to distract them."
+              <div style="font-size:0.7rem;font-style:normal;margin-top:0.35rem;color:var(--fog);font-weight:700;letter-spacing:0.03em">— UCB Commercial Leadership</div>
+            </div>
+          </div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Value story must exist first:</strong> What constitutes 'value' for UCB (adherence data? brand lift? prescription uplift?) must be defined before engaging field or signing contracts</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Decision authority:</strong> Business unit head (GM), head of operations, and finance lead must align before broader team engagement</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>The two-speed operating model problem:</strong> Pharma operates on multi-year regulatory timelines; digital health iterates on 6-week software sprints. Without two separate governance tracks – one for regulatory/compliance submissions, one for product iteration – a co-launch partnership will paralyze the partner's product development while UCB's compliance processes catch up. Establish these tracks at contract signature.<sup style="font-size:0.65em;font-weight:700;vertical-align:super;line-height:0">2</sup></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-table">
+      <div class="cap-table-head">
+        <div class="cap-col-head c-teal">UCB Brings</div>
+        <div class="cap-col-head" style="background:#1A2080">Digital Partner Brings</div>
+        <div class="cap-col-head third">Potential Third-Party Fills</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">HCP relationships and therapeutic area clinical network</div>
+        <div class="cap-cell">Commercially viable digital product with proven clinical utility</div>
+        <div class="cap-cell">Market access consulting firm (reimbursement strategy)</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Therapeutic area leads for facilitated HCP introductions (commercial team involvement phased and KPI-gated)</div>
+        <div class="cap-cell">Patient acquisition and engagement platform</div>
+        <div class="cap-cell">Media/comms agency for co-branded HCP awareness</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Brand co-investment budget and marketing infrastructure</div>
+        <div class="cap-cell">Commercial team capable of co-promoting</div>
+        <div class="cap-cell">Patient advocacy group (PAG) for patient-facing co-promotion</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Commercial operations and contract vehicles</div>
+        <div class="cap-cell">Technology for outcome data capture and reporting</div>
+        <div class="cap-cell">Payer relations specialist (payer coverage strategy)</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Regulatory and compliance expertise for compliant HCP engagement</div>
+        <div class="cap-cell">Established or developing payer reimbursement strategy</div>
+        <div class="cap-cell">Legal firm with SaMD / digital therapeutics contract expertise</div>
+      </div>
+      <div class="cap-row" style="background:rgba(37,47,161,0.04)">
+        <div class="cap-cell"><strong>End-to-end risk mitigation expertise</strong> – process knowledge across drug development, HCP engagement compliance, payer negotiations, and commercial launch means UCB de-risks the commercial path for partners in ways no other collaborator can replicate.</div>
+        <div class="cap-cell">–</div>
+        <div class="cap-cell">–</div>
+      </div>
+    </div>
+
+    <div class="third-party">
+      <div class="third-party-title">⚠️ &nbsp;When you may need a third partner</div>
+      <div class="third-party-grid">
+        <div class="third-party-card"><div class="third-party-role">If partner lacks</div><div class="third-party-name">Reimbursement pathway</div><div class="third-party-why">→ Bring in a market access consulting firm to build the payer dossier</div></div>
+        <div class="third-party-card"><div class="third-party-role">If both lack</div><div class="third-party-name">Patient-facing awareness</div><div class="third-party-why">→ Partner with a relevant patient advocacy group (PAG) for patient community co-promotion</div></div>
+        <div class="third-party-card"><div class="third-party-role">If marketing gap exists</div><div class="third-party-name">HCP digital education</div><div class="third-party-why">→ Engage medical education agency to build HCP awareness program alongside field facilitation</div></div>
+        <div class="third-party-card"><div class="third-party-role">If partner needs</div><div class="third-party-name">Distribution infrastructure</div><div class="third-party-why">→ Specialty pharmacy or patient access partner for prescription fulfillment and patient services</div></div>
+      </div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title">Must-Align Before Engaging</div>
+      <div class="checklist-grid">
+        <div class="check-item"><div class="check-box"></div><span>Commercial exclusivity scope defined (what markets, what TAs)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>HCP engagement compliance model approved by legal</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Revenue/value-sharing model reviewed by finance</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Joint KPIs and success targets agreed before field activation</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Brand and co-promotion guidelines confirmed</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Business unit head (GM) aligned before broader team engagement</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Reimbursement strategy clear – not a post-launch problem</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Commercial team engagement role defined (therapeutic area leads first vs. broader team) with compliance guardrails confirmed</span></div>
+      </div>
+    </div>
+
+    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
+        <div style="width:28px;height:28px;border-radius:6px;background:var(--midnight);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <span style="color:white;font-size:0.85rem">⚖</span>
+        </div>
+        <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Pilot Governance – Scale / Continue / Stop</div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Commercial G2M pilots are the highest-risk for "pilot drift" – where UCB field resources are consumed with no clear decision point. Set these gates at contract signature, not at the end of Year 1.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Scale</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Pre-agreed HCP adoption KPIs met (e.g., X% of target HCPs trialing tool)</li>
+            <li>Measurable link between tool adoption and UCB drug KPIs (adherence, NRX)</li>
+            <li>Partner has achieved or committed to reimbursement pathway</li>
+            <li>Brand team has confirmed budget for Year 2 co-investment</li>
+          </ul>
+        </div>
+        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Continue</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>HCP adoption below target but trend is positive</li>
+            <li>Reimbursement strategy is in motion but not yet confirmed</li>
+            <li>Continuation must include a commercial team engagement cap – no open-ended resource drain</li>
+          </ul>
+        </div>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Stop</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>HCP adoption KPIs not met after agreed pilot period</li>
+            <li>No measurable link to UCB drug KPIs after 6 months</li>
+            <li>Reimbursement pathway still undefined after 12 months</li>
+            <li>Field team distraction without defined engagement boundary</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cases-title">REAL EXAMPLES – 3 CASE STUDIES</div>
+    <div class="case-tabs">
+      <button class="case-tab active" onclick="selectCase(this,'com')">UCB × Clouds of Care</button>
+      <button class="case-tab" onclick="selectCase(this,'com')">Sanofi × Voluntis</button>
+      <button class="case-tab" onclick="selectCase(this,'com')">Warning Cases</button>
+    </div>
+    <div id="com-0" class="case-panel active">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">UCB × Clouds of Care</div><div class="case-subtitle">Epilepsy Care Navigation – Facilitated HCP adoption via UCB's field infrastructure</div></div><div><span class="case-ucb-tag">UCB EXAMPLE</span> <span class="case-geo">US</span></div></div>
+        <div class="case-body">
+          <h4>What They Explored</h4><p>UCB explored a commercial G2M collaboration with Clouds of Care, a digital platform connecting epilepsy patients to care resources, navigating insurance barriers, and supporting medication adherence. UCB's field force and TLLs were positioned as facilitators to introduce the platform to epilepsy centers of excellence.</p>
+          <h4>UCB's Role</h4><p>UCB's commercial team provides access to HCP relationships and the epilepsy center network. TLLs facilitate introductions and build platform awareness above the product sales conversation. UCB's brand association gives credibility with providers skeptical of unproven digital tools.</p>
+          <h4>Key Learning</h4><p>Agreeing on what constitutes "value" for UCB (adherence data? brand lift? prescription uplift?) BEFORE engaging is essential. Without an aligned commercial model, pharma teams default to ad-hoc support and never commit sufficient resources. A pilot with defined success metrics – tied to Vimpat or Fintepla adherence data – is the recommended first step.</p>
+          <p class="source">Source: UCB 3rd Epilepsy Digital Roundtable (Dec 2025); Clouds of Care company disclosures; Normative project files</p>
+        </div>
+      </div>
+    </div>
+    <div id="com-1" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">Sanofi × Voluntis – Insulia</div><div class="case-subtitle">FDA/CE-cleared digital companion co-launched with Sanofi's insulin field force</div></div><span class="case-geo">US / France</span></div>
+        <div class="case-body">
+          <h4>What They Did</h4><p>Sanofi signed a multi-year commercial agreement with Voluntis to deploy Insulia – an FDA and CE-cleared digital therapeutic – as a companion to its insulin portfolio. Sanofi's sales force facilitated HCP adoption, and the companies developed a shared value proposition around improved insulin titration adherence and outcomes.</p>
+          <h4>What Sanofi Brought (UCB analogy)</h4><p>Commercial infrastructure (field force, HCP network) to drive adoption of a validated digital companion, creating differentiated patient support for its drug portfolio. The contract clearly defined revenue sharing and exclusivity terms upfront.</p>
+          <h4>Key Learning for UCB</h4><p>Commercial partnerships with SaMD companies work best when there is a direct link between digital tool adoption and the pharma product's clinical benefit. Generic "digital wellness" doesn't sustain commercial commitment. For UCB in epilepsy: the partner's tool must directly impact seizure control data, diagnosis rates, or medication adherence for Vimpat/Fintepla.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">Improved titration adherence</span><span class="outcome-pill">3-year commercial partnership</span><span class="outcome-pill">Reimbursement pathway established</span></div>
+          <p class="source">Source: Sanofi × Voluntis partnership (2018); DiabetesMine; BMJ Open Diabetes Research (2020)</p>
+        </div>
+      </div>
+    </div>
+    <div id="com-2" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">Commercial G2M Warning Cases</div><div class="case-subtitle">Otsuka × Proteus and Pear Therapeutics × Novartis – when validated technology meets an unresolved business model</div></div><span class="case-geo">US</span></div>
+        <div class="case-body">
+          <h4>Otsuka × Proteus – Abilify MyCite (FDA-approved 2017, Proteus bankrupt 2019)</h4><p>Otsuka partnered with Proteus Digital Health to embed an FDA-cleared ingestible sensor into Abilify (aripiprazole), creating Abilify MyCite – the first FDA-approved digital medicine. The technology was validated. The co-launch failed because payer alignment was never secured before commercial activation. Proteus entered bankruptcy in 2019.</p>
+          <h4>Pear Therapeutics × Novartis – reSET DTx (Pear bankrupt 2023)</h4><p>Pear Therapeutics developed FDA-cleared prescription digital therapeutics (PDTs) for substance use disorder (reSET) and insomnia (Somryst), with Novartis as a strategic partner and investor. Despite FDA clearance, a major pharma backer, and a first-mover position in prescription DTx, Pear filed for bankruptcy in January 2023. The cause: no sustainable payer reimbursement model. Most insurers refused to cover prescription DTx as a standalone benefit. Novartis's commercial infrastructure was not sufficient to substitute for a missing reimbursement strategy.</p>
+          <h4>The shared lesson for UCB</h4><p>Both cases confirm the same finding: technology validation and even FDA/CE clearance are insufficient for commercial success without a funded reimbursement pathway agreed before launch. For UCB's Commercial G2M partnerships: the payer strategy is a prerequisite to field activation – not a post-launch problem. If the partner cannot articulate a credible coverage pathway at model selection stage, this is not a Commercial G2M partner yet – consider Model 1 (RWE evidence co-generation) as the correct first step.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">Proteus bankrupt 2019</span><span class="outcome-pill">Pear bankrupt 2023</span><span class="outcome-pill">Key lesson: payer strategy before field activation</span></div>
+          <p class="source">Source: FDA approval records; Otsuka corporate filings; JAMA Psychiatry (2021); Pear Therapeutics bankruptcy filing (Jan 2023); Novartis investor disclosures; STAT News Digital Health (2023)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODEL 3: ECOSYSTEM ENABLER ═══════════════════════ -->
+  <div class="model-panel" id="panel-2">
+    <div class="model-header" style="background:linear-gradient(135deg,#8FAF9A,#B3C8C5);color:var(--graphite)">
+      <div class="model-number">03</div>
+      <div>
+        <div class="model-title">Ecosystem Enabler Partnership</div>
+        <div class="model-subtitle">UCB acts as convener and catalyst – connecting digital health partners to payers, providers, PAGs, and each other – to accelerate ecosystem-wide adoption beyond any single brand.</div>
+      </div>
+    </div>
+
+    <div class="maturity-fit">
+      <div class="maturity-fit-title">Startup Maturity Fit</div>
+      <div class="maturity-fit-row">
+        <div class="maturity-fit-cell" style="background:var(--grey);color:#9AAEAC;border-color:var(--border)">1 · Discovery<br><small>Too early</small></div>
+        <div class="maturity-fit-cell partial" style="border-color:#8FAF9A;color:#5E6F6D">2 · Validation<br><small>◑ Possible – intro via roundtable</small></div>
+        <div class="maturity-fit-cell fit c-purple">3 · Growth<br><small>✓ Strong – ecosystem connections</small></div>
+        <div class="maturity-fit-cell fit c-purple">4 · Commercial<br><small>✓ Ideal – convener + co-market</small></div>
+        <div class="maturity-fit-cell fit c-purple">5 · Scale<br><small>✓ Strong – standards and governance</small></div>
+      </div>
+    </div>
+
+    <div class="vision-box" style="background:linear-gradient(135deg,#252FA1,#5260FE)">
+      <div class="vision-label">Partnership Vision</div>
+      <div class="vision-text">UCB plays the role of trusted broker: convening the right stakeholders, facilitating shared standards, and reducing the friction that prevents digital health solutions from scaling – in exchange for brand leadership, ecosystem goodwill, and positioning as the digital health partner of choice across UCB's therapeutic priorities. This is the "above-brand" model: UCB's role is explicitly not commercial promotion of a single drug, but investment in the ecosystem infrastructure that benefits all its therapeutic priorities simultaneously. </div>
+    </div>
+
+    <div class="three-col">
+      <div class="info-card">
+        <div class="info-card-header c-purple">UCB Requires from Partners</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Initiative must be above-brand and cross-partner (no single commercial bias or preferred treatment promotion)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Partners commit to shared governance – UCB is convener, not controller</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Defined shared outcomes benefiting the whole ecosystem (not just UCB KPIs)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Legal/compliance clearance for multi-party stakeholder engagement</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Long-term commitment from partners – not just event participation</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#8FAF9A">Partners Require from UCB</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Neutral facilitation without preferential commercial treatment for any single partner</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Access to UCB's payer, PAG, and regulatory relationships that startups cannot access alone</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">UCB commitment of staff time and resource (not just budget) – including medical affairs, legal, and commercial leadership</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Multi-year UCB leadership continuity so the ecosystem trust compounds</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Clear articulation of what UCB gets back – so the commercial justification exists for budget approval</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#7E9492">Key Constraint</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Above-brand governance:</strong> This model fails if UCB's commercial team tries to use it for product promotion. Legal must clear the above-brand facilitation role explicitly before any multi-stakeholder event</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Budget justification:</strong> The multi-pharma consortium model – non-profit ecosystem investment – requires multi-company cost sharing to be sustainable. UCB cannot fund this unilaterally</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Exit clarity:</strong> Convening without follow-through destroys trust. The North Star IS the follow-through to the roundtable – each ecosystem activation needs a defined output</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-table">
+      <div class="cap-table-head">
+        <div class="cap-col-head c-purple">UCB Brings</div>
+        <div class="cap-col-head" style="background:#8FAF9A">Digital Partners Bring</div>
+        <div class="cap-col-head third">Third-Party Ecosystem Members</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Convening power and trusted relationships across therapeutic areas</div>
+        <div class="cap-cell">Digital tools addressing genuine system-level problems</div>
+        <div class="cap-cell">Other pharma companies as co-funders</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Connections to payers, PAGs, and advocacy organizations</div>
+        <div class="cap-cell">Willingness to participate in shared governance and data standards</div>
+        <div class="cap-cell">Relevant patient advocacy groups (PAGs)</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Above-brand reputation as a disease area and care ecosystem steward</div>
+        <div class="cap-cell">Clinical credibility with providers and patient communities</div>
+        <div class="cap-cell">Academic medical centers (shared standards and evidence)</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Medical affairs and regulatory navigation expertise</div>
+        <div class="cap-cell">Long-term commitment to ecosystem, not just short-term commercial gain</div>
+        <div class="cap-cell">Payers (CMS, commercial insurers) as co-design participants</div>
+      </div>
+      <div class="cap-row" style="background:rgba(179,200,197,0.08)">
+        <div class="cap-cell"><strong>Risk mitigation and compliance navigation</strong> – above-brand ecosystem initiatives carry unique legal and compliance considerations. UCB's experience navigating multi-stakeholder engagements, above-brand activities, and regulatory constraints is a critical enabler for ecosystem initiatives that startups and PAGs cannot lead alone.</div>
+        <div class="cap-cell">–</div>
+        <div class="cap-cell">–</div>
+      </div>
+    </div>
+
+    <div class="third-party">
+      <div class="third-party-title">⚠️ &nbsp;Who else the ecosystem needs</div>
+      <div class="third-party-grid">
+        <div class="third-party-card"><div class="third-party-role">Co-funders</div><div class="third-party-name">Co-investing pharma companies</div><div class="third-party-why">→ Share non-profit initiative costs (multi-pharma consortium model). "We all had a certain amount of budget. We don't agree this is just ours – let's all do this together."</div></div>
+        <div class="third-party-card"><div class="third-party-role">Patient Voice</div><div class="third-party-name">Relevant patient advocacy group (PAG)</div><div class="third-party-why">→ PAGs give the above-brand initiative credibility, patient access, and grassroots momentum that pharma alone cannot generate</div></div>
+        <div class="third-party-card"><div class="third-party-role">Standards Setter</div><div class="third-party-name">Academic Medical Centers</div><div class="third-party-why">→ Provide clinical legitimacy and shared data standards that make ecosystem outputs credible to regulators and payers</div></div>
+        <div class="third-party-card"><div class="third-party-role">Neutral Facilitator</div><div class="third-party-name">Normative (or similar)</div><div class="third-party-why">→ An external strategy partner maintains neutral convening role and manages the governance structure across competing commercial interests</div></div>
+      </div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title">Must-Align Before Engaging</div>
+      <div class="checklist-grid">
+        <div class="check-item"><div class="check-box"></div><span>Above-brand governance structure agreed and documented</span></div>
+        <div class="check-item"><div class="check-box"></div><span>All participants aware of multi-party, above-brand nature</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Shared outcomes and success metrics defined for all parties</span></div>
+        <div class="check-item"><div class="check-box"></div><span>UCB convener vs. commercial role boundaries legally cleared</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Payer/PAG/provider engagement plan confirmed</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Multi-year commitment and UCB leadership continuity plan in place</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Co-funding model identified (single UCB vs. multi-company)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Output artifacts defined – what does the ecosystem produce?</span></div>
+      </div>
+    </div>
+
+    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
+        <div style="width:28px;height:28px;border-radius:6px;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <span style="color:var(--graphite);font-size:0.85rem">⚖</span>
+        </div>
+        <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Pilot Governance – Scale / Continue / Stop</div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Ecosystem initiatives are the hardest to evaluate – their benefits are diffuse and long-term. That makes pre-agreed decision gates even more important to prevent indefinite "convening without output."</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Scale</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Defined ecosystem output produced (shared standard, evidence framework, or co-funded initiative)</li>
+            <li>2+ co-funders or governance members committed beyond UCB</li>
+            <li>Payer or PAG participation confirmed in the initiative</li>
+            <li>UCB brand leadership in the ecosystem is measurable (media, HCP recognition)</li>
+          </ul>
+        </div>
+        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Continue</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Output is in development but not yet complete</li>
+            <li>Co-funders in active discussion but not committed</li>
+            <li>Continuation requires a defined artifact delivery date – not open engagement</li>
+          </ul>
+        </div>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Stop</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>No ecosystem output produced after two convening cycles</li>
+            <li>UCB is sole funder – no co-investment secured after 6 months</li>
+            <li>Governance has failed to maintain above-brand integrity</li>
+            <li>Partner participation is event-only with no long-term commitment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cases-title">REAL EXAMPLES – 3 CASE STUDIES</div>
+    <div class="case-tabs">
+      <button class="case-tab active" onclick="selectCase(this,'eco')">UCB Digital Roundtable</button>
+      <button class="case-tab" onclick="selectCase(this,'eco')">Roche PHC Coalition</button>
+      <button class="case-tab" onclick="selectCase(this,'eco')">Merck Palliative Care</button>
+    </div>
+    <div id="eco-0" class="case-panel active">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">UCB – 3rd Epilepsy Digital Roundtable</div><div class="case-subtitle">Pharma-led multi-stakeholder convening for digital health G2M in epilepsy</div></div><div><span class="case-ucb-tag">UCB EXAMPLE</span> <span class="case-geo">Atlanta, US</span></div></div>
+        <div class="case-body">
+          <h4>What UCB Did</h4><p>UCB convened its 3rd Epilepsy Digital Roundtable in December 2025, bringing together 10 digital health companies and 30+ participants to collectively identify and tackle the top G2M challenges in epilepsy digital health – specifically scaled adoption/integration and sustainable revenue models. Partners explicitly said UCB adds value by "making connections" and "bearing the torch" as a life sciences company.</p>
+          <h4>UCB's Ecosystem Enabler Role</h4><p>Above-brand facilitator and connector. UCB's role: create shared problem ownership across 10 competing digital health companies in a non-competing setting. The roundtable created the conditions for the North Star project to exist.</p>
+          <h4>Key Learning</h4><p>Convening without follow-through is insufficient – the North Star IS the follow-through. The September 2026 V.3 activation workshop is the next ecosystem enabler moment: bringing 2 external partners with real problems and building real partnership models together.</p>
+          <p class="source">Source: UCB 3rd Epilepsy Digital Roundtable documentation (Dec 2025); April 10 DCTx North Star Kickoff; Normative project files</p>
+        </div>
+      </div>
+    </div>
+    <div id="eco-1" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">Roche – PHC Coalition</div><div class="case-subtitle">Pharma-led multi-stakeholder initiative for personalized medicine data standards</div></div><span class="case-geo">Global</span></div>
+        <div class="case-body">
+          <h4>What Roche Did</h4><p>Roche established its Personalized Healthcare (PHC) Coalition to convene digital health partners, academic medical centers, payers, and regulators around shared infrastructure for data standards, evidence generation, and clinical decision support tools – across therapeutic areas, not tied to any single Roche product.</p>
+          <h4>UCB Lesson</h4><p>Roche's model shows how a pharma company can hold a convener role at scale – building shared infrastructure (data standards, evidence frameworks) that benefits all ecosystem participants. UCB can adapt this model across therapeutic areas: build shared data standards for disease monitoring and RWE that digital partners and academic centers adopt.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">15+ partners adopted shared framework</span><span class="outcome-pill">Roche = "go-to ecosystem partner" brand</span><span class="outcome-pill">Reusable RWE infrastructure</span></div>
+          <p class="source">Source: Roche PHC Coalition documentation; Roche investor disclosures (2022–2024)</p>
+        </div>
+      </div>
+    </div>
+    <div id="eco-2" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">Merck (MSD) – Palliative Care Digital Ecosystem</div><div class="case-subtitle">Pharma enabler: funder and convener building multi-stakeholder digital health ecosystem</div></div><span class="case-geo">US / EU</span></div>
+        <div class="case-body">
+          <h4>What Merck Did</h4><p>Merck supported development of a shared digital platform and evidence standards framework for palliative care digital health – acting as funder and convener rather than product developer. Merck's role: bring together PAGs, health systems, payers, and digital health startups around a shared problem definition. Investment came from Merck's "above-brand" philanthropic and strategic budget – not from any single brand team.</p>
+          <h4>UCB Lesson</h4><p>Merck's approach directly models what UCB could do: fund and facilitate shared infrastructure (evidence standards, workflow templates, data models) that multiple digital health partners in epilepsy can build on. The Jackie French clinical investigator training model (Jason Joseph) is the same playbook – multi-company, above-brand, shared cost.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">Non-commercial credibility maintained</span><span class="outcome-pill">Multi-company cost sharing</span><span class="outcome-pill">Ecosystem trust compounds over time</span></div>
+          <p class="source">Source: Merck Global Health initiatives; Center to Advance Palliative Care (CAPC) digital health program; Health Affairs (2023)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODEL 4: EQUITY / INVESTMENT ═════════════════════ -->
+  <div class="model-panel" id="panel-3">
+    <div class="model-header" style="background:linear-gradient(135deg,#5E6F6D,#7E9492)">
+      <div class="model-number">04</div>
+      <div>
+        <div class="model-title">Equity / Investment Partnership</div>
+        <div class="model-subtitle">UCB takes an equity stake or structured investment in a digital health company in exchange for strategic access, data rights, commercial priority, or first-mover advantage in the partner's platform.</div>
+      </div>
+    </div>
+
+    <div class="maturity-fit">
+      <div class="maturity-fit-title">Startup Maturity Fit</div>
+      <div class="maturity-fit-row">
+        <div class="maturity-fit-cell" style="background:var(--grey);color:#9AAEAC;border-color:var(--border)">1 · Discovery<br><small>Too early – no evidence to de-risk</small></div>
+        <div class="maturity-fit-cell fit c-gold" style="background:#7E9492">2 · Validation<br><small>✓ Ideal – first-mover strategic stake</small></div>
+        <div class="maturity-fit-cell fit c-gold" style="background:#7E9492">3 · Growth<br><small>✓ Strong – data rights + preferred access</small></div>
+        <div class="maturity-fit-cell partial" style="border-color:#7E9492;color:#5E6F6D">4 · Commercial<br><small>◑ Possible – if valuation acceptable</small></div>
+        <div class="maturity-fit-cell" style="background:var(--grey);color:#9AAEAC;border-color:var(--border)">5 · Scale<br><small>Typically too expensive</small></div>
+      </div>
+    </div>
+
+    <div class="vision-box" style="background:linear-gradient(135deg,#5E6F6D,#7E9492)">
+      <div class="vision-label">Partnership Vision</div>
+      <div class="vision-text">UCB invests financially and strategically in a digital health company building something UCB cannot build internally – gaining preferred access, board or advisory representation, data rights, and a long-term stake in the partner's commercial success. The investment is not purely financial: it must be tied to explicit strategic benefits (data rights for RWE, preferred HCP access, first-mover commercial rights). UCB should shift from pure financial equity toward structured strategic access agreements that create tangible operational value.</div>
+    </div>
+
+    <div class="three-col">
+      <div class="info-card">
+        <div class="info-card-header c-gold" style="background:#7E9492">UCB Requires from Partner</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Clear investment thesis tied to UCB's strategic priorities (not just financial return)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Defined data rights, commercial access, and governance terms in investment agreement</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Defensible IP, clinical evidence roadmap, and credible founding team</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Exit or continuation criteria agreed upfront (what does success look like in 3–5 years?)</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Investment committee approval and legal/IP due diligence completed before commitment</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#5E6F6D">Partner Requires from UCB</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Strategic value beyond capital – UCB cannot be a passive financial investor only</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Board or advisory input aligned to partner's roadmap, not only UCB's commercial priorities</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Clear terms on exclusivity – partners often resist full commercial exclusivity with a single pharma investor</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Transparent IP assignment for any jointly developed assets</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Long-term commitment signal that de-risks partner's next fundraising round</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text"><strong>Strategic validation toward a sustainable business model</strong> – beyond capital, UCB's investment signals commercial viability to other investors. Startups receiving pharma equity are, in large part, seeking a path to sustainable revenue: UCB's involvement should be structured to open that path – through preferred commercial rights, data access, and market access support – not just to provide financial runway.</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-header" style="background:#7E9492">Key Constraint</div>
+        <div class="info-card-body">
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>UCB is moving away from equity:</strong> Leadership interviews and meetings with Tanja confirm UCB is deprioritizing equity investments in favor of structured operational partnerships (MoRAL P-type investments). Equity is Model 4 – use selectively for truly first-mover strategic opportunities</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Pure financial stake fails:</strong> Rock Health and McKinsey data confirm pharma equity investments without strategic access terms consistently underperform vs. structured operational partnerships</div></div>
+          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Valuation risk:</strong> Digital health valuations are compressed in 2025–2026. Investment committee must assess strategic ROI, not just financial return multiples</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-table">
+      <div class="cap-table-head">
+        <div class="cap-col-head c-gold" style="background:#7E9492">UCB Brings</div>
+        <div class="cap-col-head" style="background:#5E6F6D">Digital Partner Brings</div>
+        <div class="cap-col-head third">Potential Third-Party Fills</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Strategic investment capital and BD/venture expertise</div>
+        <div class="cap-cell">Differentiated digital technology with defensible IP</div>
+        <div class="cap-cell">Co-investor (VC fund) for syndication and valuation support</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Board or advisory representation (strategic input)</div>
+        <div class="cap-cell">Credible founding team with clinical and commercial expertise</div>
+        <div class="cap-cell">BD advisory firm for deal structuring and due diligence</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Preferred commercial rights and data access terms</div>
+        <div class="cap-cell">Clinical evidence or evidence roadmap to FDA/CE clearance</div>
+        <div class="cap-cell">IP law firm with digital health / SaMD transaction expertise</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Clinical network for pilot deployment</div>
+        <div class="cap-cell">Viable commercial model with path to sustainability</div>
+        <div class="cap-cell">Regulatory consultant (FDA/CE clearance pathway advisory)</div>
+      </div>
+      <div class="cap-row">
+        <div class="cap-cell">Long-term commitment signal that de-risks fundraising</div>
+        <div class="cap-cell">Strategic value that makes UCB a preferred pharma partner</div>
+        <div class="cap-cell">Other pharma co-investors (portfolio investment model)</div>
+      </div>
+      <div class="cap-row" style="background:rgba(126,148,146,0.06)">
+        <div class="cap-cell"><strong>De-risking the commercial and regulatory path</strong> – beyond capital, UCB's investment signals to the market that a company has survived pharma-grade due diligence. UCB's end-to-end process knowledge from evidence generation to market access is the strategic asset that makes this more than a financial transaction.</div>
+        <div class="cap-cell">–</div>
+        <div class="cap-cell">–</div>
+      </div>
+    </div>
+
+    <div class="third-party">
+      <div class="third-party-title">⚠️ &nbsp;When you may need a third partner</div>
+      <div class="third-party-grid">
+        <div class="third-party-card"><div class="third-party-role">Co-investor</div><div class="third-party-name">Venture Capital Fund (e.g., GV, Rock Health Capital)</div><div class="third-party-why">→ VC syndication spreads financial risk, validates valuation, and brings fundraising expertise UCB's BD team lacks</div></div>
+        <div class="third-party-card"><div class="third-party-role">Due Diligence</div><div class="third-party-name">BD Advisory / Strategy Consulting</div><div class="third-party-why">→ Specialist digital health investment due diligence (specialist digital health investment advisors) for investment thesis validation</div></div>
+        <div class="third-party-card"><div class="third-party-role">IP Structuring</div><div class="third-party-name">Digital Health IP Law Firm</div><div class="third-party-why">→ SaMD-specific IP assignment terms require specialist legal counsel; standard pharma IP lawyers often lack digital health transaction experience</div></div>
+        <div class="third-party-card"><div class="third-party-role">Other Pharma</div><div class="third-party-name">Relevant co-investing pharma companies</div><div class="third-party-why">→ Novartis Venture Fund model: portfolio investment with multiple pharma co-investors generates more strategic options than single large bets</div></div>
+      </div>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-title">Must-Align Before Engaging</div>
+      <div class="checklist-grid">
+        <div class="check-item"><div class="check-box"></div><span>Investment thesis documented with strategic access terms (not just equity %)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>IP ownership and assignment terms agreed</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Exclusivity scope and limits defined</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Board/advisory governance terms negotiated</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Data rights and commercial access terms in investment agreement</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Exit or continuation criteria and timeline agreed (3–5 year view)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Investment committee approval and legal due diligence complete</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Strategic ROI narrative confirmed (beyond financial return)</span></div>
+      </div>
+    </div>
+
+    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
+        <div style="width:28px;height:28px;border-radius:6px;background:#7E9492;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <span style="color:white;font-size:0.85rem">⚖</span>
+        </div>
+        <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Investment Review – Scale / Continue / Exit</div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Equity partnerships must be reviewed against strategic (not just financial) criteria. Define exit criteria at time of investment – not when the relationship becomes difficult to exit.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Deepen</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Strategic access terms (data rights, preferred commercial) are actively being used</li>
+            <li>Partner is on track to clinical or regulatory milestone agreed at investment</li>
+            <li>UCB's board/advisory input is shaping partner roadmap</li>
+            <li>Follow-on investment or structured partnership conversion is viable</li>
+          </ul>
+        </div>
+        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Hold</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Partner is progressing but strategic access terms not yet activated</li>
+            <li>Market conditions have shifted – reassess strategic fit before deepening</li>
+            <li>Hold requires a defined reassessment date – not passive monitoring</li>
+          </ul>
+        </div>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Exit</div>
+          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
+            <li>Strategic access terms were never operationalized after 12 months</li>
+            <li>Partner's therapeutic focus has drifted from UCB priorities</li>
+            <li>Financial return is the only remaining rationale – convert to pure financial instrument or divest</li>
+            <li>Partner has entered a competing commercial relationship that conflicts with UCB's terms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cases-title">REAL EXAMPLES – 3 CASE STUDIES</div>
+    <div class="case-tabs">
+      <button class="case-tab active" onclick="selectCase(this,'eq')">UCB Strategic Investment</button>
+      <button class="case-tab" onclick="selectCase(this,'eq')">Novartis Venture Fund</button>
+      <button class="case-tab" onclick="selectCase(this,'eq')">Alphabet/Verily × Pharma</button>
+    </div>
+    <div id="eq-0" class="case-panel active">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">UCB – Strategic Digital Health Investment Approach</div><div class="case-subtitle">Structuring equity investments for strategic return, not just financial exposure</div></div><div><span class="case-ucb-tag">UCB EXAMPLE</span> <span class="case-geo">US / EU</span></div></div>
+        <div class="case-body">
+          <h4>The UCB Context</h4><p>UCB has made strategic investments in digital health companies where the technology offers direct complementary value to its therapeutic portfolio – including Byteflies (10-year partner, epilepsy EEG monitoring) and Beacon Biosignals. The investment model has provided UCB with preferred access and a stake in the partner's commercial success.</p>
+          <h4>The Shift Required</h4><p>Based on leadership interviews (Jason Joseph, Erik Janssen) and Tanja Kellermann's direction, UCB is moving away from pure equity investments toward operational MoRAL P-type partnerships. Future equity investments must include structured strategic access terms: data rights for RWE, preferred HCP access rights, or first-mover commercial partnerships – not just a stake on the cap table.</p>
+          <h4>Key Learning</h4><p>Pharma equity investments that lack clear strategic terms consistently underperform. The companies generating the most value (Novartis, Sanofi, Roche) all tie equity to structured strategic access agreements. UCB's next investment should include: explicit data rights clause, preferred commercial terms for epilepsy, and board observer rights.</p>
+          <p class="source">Source: UCB leadership interviews (Jason Joseph, Apr 2026; Erik Janssen, Apr 2026); Normative project files; McKinsey Digital Health Investment Report (2023); Rock Health (2024)</p>
+        </div>
+      </div>
+    </div>
+    <div id="eq-1" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">Novartis Venture Fund</div><div class="case-subtitle">Corporate venture fund with structured strategic alignment to therapeutic priorities</div></div><span class="case-geo">Global</span></div>
+        <div class="case-body">
+          <h4>What Novartis Did</h4><p>Novartis established its Venture Fund (NVF) to invest in early-stage digital health and biotech companies whose technology complements Novartis's clinical and commercial priorities – including AI diagnostics, digital therapeutics, and patient monitoring – all structured with strategic access rights, not just financial stakes. Each NVF investment includes: data rights for Novartis's medical affairs team, right of first negotiation for commercial partnerships, and board observer rights.</p>
+          <h4>UCB Lesson</h4><p>Portfolio investment (5–10 companies at different stages) generates more strategic options than single large bets. UCB should consider a staged portfolio approach across UCB's therapeutic priorities rather than concentrated single investments. A small UCB Digital Health Fund could hold preferred access rights across strategic startups in disease monitoring, diagnostics, and care navigation across UCB's therapeutic priorities.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">Portfolio strategic value across TAs</span><span class="outcome-pill">Right of first negotiation on commercial deals</span><span class="outcome-pill">Board observer rights included</span></div>
+          <p class="source">Source: Novartis Venture Fund public portfolio; Novartis investor disclosures (2022–2024); Rock Health corporate venture report (2023)</p>
+        </div>
+      </div>
+    </div>
+    <div id="eq-2" class="case-panel">
+      <div class="case-card">
+        <div class="case-header"><div><div class="case-company">Alphabet/Verily × Pharma Partners</div><div class="case-subtitle">Platform equity investment with structured data rights and pharma commercial access</div></div><span class="case-geo">US / Global</span></div>
+        <div class="case-body">
+          <h4>What They Did</h4><p>Alphabet's GV and Verily take equity stakes in digital health companies that generate data or clinical capabilities feeding into Alphabet's broader digital health infrastructure – including partnerships with Novartis, Sanofi, and Pfizer structured with preferred data access and commercial integration rights.</p>
+          <h4>UCB Lesson</h4><p>Invest in platform companies where the strategic return is data access and clinical integration rights, not just financial return. UCB can use equity investment to secure rights to digital biomarker data from epilepsy monitoring platforms – a strategic asset for RWE and commercial goals. Verily's partnerships with pharma generated shared RWE datasets used in regulatory submissions and payer negotiations: preferred data access is commercially and clinically strategic, not speculative.</p>
+          <div style="margin-top:0.75rem"><span class="outcome-pill">Shared RWE datasets for regulatory use</span><span class="outcome-pill">Preferred pharma data access</span><span class="outcome-pill">Payer negotiation evidence generated</span></div>
+          <p class="source">Source: Verily/Alphabet corporate disclosures; Verily × Novartis partnership; GV portfolio; STAT News Digital Health Investing (2024)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ─── DECISION GUIDE ─────────────────────────────────────── -->
+<section id="decision" style="background:var(--lgrey)">
+<div class="section-inner">
+  <div class="section-label">Decision Guide</div>
+  <h2 class="section-title">Which model fits your startup?</h2>
+  <p class="section-sub" style="margin-bottom:0.5rem">Use these questions to orient your thinking before a startup conversation begins. Each scenario points to the partnership model most likely to create lasting value.</p>
+  <div class="decision-grid">
+    <div class="decision-card" onclick="selectModel(0); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
+      <div class="decision-q">The startup has real-world patient data but needs a credible payer evidence story.</div>
+      <div class="decision-a">They have the data platform. UCB has the HEOR, payer, and regulatory relationships. Co-designing the evidence framework is the right first step.</div>
+      <div><span class="decision-model" style="background:var(--blue)">→ Model 1: RWE Evidence Partnership</span></div>
+    </div>
+    <div class="decision-card" onclick="selectModel(1); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
+      <div class="decision-q">The startup has a validated product and needs HCP distribution. We can benefit from their outcomes data.</div>
+      <div class="decision-a">They're commercially ready. UCB's commercial team and brand can accelerate HCP adoption. Define the value exchange and KPIs before engaging the commercial team.</div>
+      <div><span class="decision-model" style="background:var(--midnight)">→ Model 2: Commercial G2M Partnership</span></div>
+    </div>
+    <div class="decision-card" onclick="selectModel(2); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
+      <div class="decision-q">Multiple startups are solving the same ecosystem problem – and no single pharma company should own the solution.</div>
+      <div class="decision-a">UCB plays convener: bringing partners, payers, PAGs, and potentially other pharma companies together. Above-brand governance is essential. Multi-year commitment required.</div>
+      <div><span class="decision-model" style="background:var(--sage);color:var(--graphite)">→ Model 3: Ecosystem Enabler Partnership</span></div>
+    </div>
+    <div class="decision-card" onclick="selectModel(3); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
+      <div class="decision-q">The startup is building something UCB can't build internally – and we need first-mover access rights.</div>
+      <div class="decision-a">Use equity for strategic access, not just financial exposure. Tie the investment to data rights, preferred commercial terms, and board representation. Get investment committee alignment first.</div>
+      <div><span class="decision-model" style="background:#7E9492">→ Model 4: Equity / Investment Partnership</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;background:var(--midnight);border-radius:12px;padding:2rem;color:white">
+    <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:0.75rem">The North Star Contract Checklist</div>
+    <p style="font-size:0.95rem;color:rgba(200,226,250,0.8);line-height:1.7;margin-bottom:1.25rem">Whichever model you choose, every UCB digital health partnership contract should address these elements to enable budget approval, sustainability, and a strong internal narrative:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
+      <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1rem">
+        <div style="color:var(--sky);font-size:0.8rem;font-weight:700;margin-bottom:0.5rem">FAIR VALUE EXCHANGE</div>
+        <div style="font-size:0.85rem;color:rgba(200,226,250,0.75);line-height:1.6">What does UCB get? What does the partner get? Measured by what KPIs? Green money (revenue) or brown money (cost savings) narrative clearly stated.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1rem">
+        <div style="color:var(--sky);font-size:0.8rem;font-weight:700;margin-bottom:0.5rem">DATA &amp; IP RIGHTS</div>
+        <div style="font-size:0.85rem;color:rgba(200,226,250,0.75);line-height:1.6">Who owns the data generated? Who owns jointly developed IP? What are the usage rights? These must be resolved before data collection begins.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1rem">
+        <div style="color:var(--sky);font-size:0.8rem;font-weight:700;margin-bottom:0.5rem">SUSTAINABILITY MODEL</div>
+        <div style="font-size:0.85rem;color:rgba(200,226,250,0.75);line-height:1.6">Who pays for what, and for how long? What is the exit or renewal criteria? A Care Compass-style "who pays next year?" crisis is prevented by having this defined at contract signature.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ─── NOTES ──────────────────────────────────────────────── -->
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <strong>UCB · DCTx North Star – V.1 Draft</strong> &nbsp;·&nbsp; Prepared by Normative &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Private &amp; Confidential<br>
+  <span style="font-size:0.78rem;color:#64748B;margin-top:0.5rem;display:block">For questions or feedback: jay@normative.com · tanja.kellermann@ucb.com</span>
+  <span style="font-size:0.75rem;color:#64748B;margin-top:0.6rem;display:block;line-height:1.8"><strong style="text-transform:uppercase;letter-spacing:0.06em;font-size:0.7rem">Sources</strong> &nbsp;·&nbsp; Rock Health Digital Health Funding Year-End Report (2025); Galen Growth HealthTech Index (2025); pharmaphorum partnership analysis; Novartis, AstraZeneca, Roche, Sanofi public disclosures; UCB Epilepsy Digital Roundtable (Dec 2025); Normative leadership interview synthesis (Apr–May 2026)</span>
+  <span style="font-size:0.75rem;color:#64748B;margin-top:0.35rem;display:block;line-height:1.8"><sup>1</sup> Rock Health Digital Health Funding Year-End Report (2025): 81%+ recurring revenue as benchmark threshold for commercial-stage digital health company maturity. &nbsp; <sup>2</sup> DTx Alliance, <em>Governance &amp; Operational Models for Pharma-Digital Partnerships</em> (2024): best-practice guidance on dual-track governance separating regulatory/compliance timelines from agile product iteration cycles in co-launch partnerships.</span>
+</footer>
+
+<script>
+// ─── MODEL TABS ───────────────────────────────────────────────
+function selectModel(idx) {
+  const panels = document.querySelectorAll('.model-panel');
+  const tabs = document.querySelectorAll('.model-tab');
+  const colors = [
+    'linear-gradient(135deg,#252FA1,#5260FE)',
+    'linear-gradient(135deg,#1A2080,#252FA1)',
+    'linear-gradient(135deg,#8FAF9A,#B3C8C5)',
+    'linear-gradient(135deg,#5E6F6D,#7E9492)'
+  ];
+  panels.forEach((p,i) => p.classList.toggle('active', i === idx));
+  tabs.forEach((t,i) => {
+    t.classList.toggle('active', i === idx);
+    if (i === idx) t.style.background = colors[idx].split(',')[1].trim().replace(')','');
+  });
+}
+
+// ─── CASE STUDY TABS ─────────────────────────────────────────
+function selectCase(btn, prefix) {
+  const parent = btn.closest('.model-panel');
+  const allBtns = btn.parentElement.querySelectorAll('.case-tab');
+  const idx = Array.from(allBtns).indexOf(btn);
+  allBtns.forEach((b,i) => b.classList.toggle('active', i === idx));
+  for(let i = 0; i < 3; i++) {
+    const el = document.getElementById(prefix + '-' + i);
+    if(el) el.classList.toggle('active', i === idx);
+  }
+}
+
+// ─── NAV ACTIVE ──────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+      });
+    }
+  });
+}, {threshold: 0.3});
+['overview','maturity','models','decision'].forEach(id => {
+  const el = document.getElementById(id) || document.querySelector('section[id="' + id + '"]');
+  if(el) observer.observe(el);
+});
+
+// ─── MODEL PILLS FROM HERO ────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // init tab colors
+  const tabs = document.querySelectorAll('.model-tab');
+  const tabColors = ['#5260FE','#252FA1','#B3C8C5','#7E9492'];
+  tabs.forEach((t,i) => { if(i===0) t.style.background = tabColors[0]; });
+});
+// ─── PASSWORD PROTECTION ─────────────────────────────────────
+const PW_HASH = '045c95480795185217a65793b63b6f84be29518676fb412881f0f6f0edc44625';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+async function checkPassword() {
+  const input = document.getElementById('pw-input').value;
+  const hash = await sha256(input);
+  if (hash === PW_HASH) {
+    sessionStorage.setItem('ns_auth', '1');
+    document.getElementById('pw-overlay').style.display = 'none';
+    document.getElementById('pw-input').value = '';
+  } else {
+    const err = document.getElementById('pw-error');
+    err.style.display = 'block';
+    document.getElementById('pw-input').value = '';
+    document.getElementById('pw-input').focus();
+    setTimeout(() => { err.style.display = 'none'; }, 2500);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('ns_auth') !== '1') {
+    document.getElementById('pw-overlay').style.display = 'flex';
+  }
+  document.getElementById('pw-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') checkPassword();
+  });
+});
+</script>
+
+<!-- ─── PASSWORD OVERLAY ───────────────────────────────────── -->
+<div id="pw-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#1a1a2e 0%,#252FA1 100%);align-items:center;justify-content:center;flex-direction:column;font-family:'Manrope',sans-serif">
+  <div style="text-align:center;max-width:380px;padding:2.5rem 2rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:16px;backdrop-filter:blur(12px)">
+    <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,226,250,0.6);margin-bottom:0.6rem">Private & Confidential</div>
+    <div style="font-family:'Anton',sans-serif;font-size:1.6rem;color:#fff;letter-spacing:0.04em;margin-bottom:0.3rem">UCB · DCTx</div>
+    <div style="font-family:'Anton',sans-serif;font-size:1.1rem;color:#C8E2FA;letter-spacing:0.08em;margin-bottom:1.8rem">NORTH STAR</div>
+    <input id="pw-input" type="password" placeholder="Enter password" autocomplete="off"
+      style="width:100%;box-sizing:border-box;padding:0.75rem 1rem;border-radius:8px;border:1.5px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;font-family:'Manrope',sans-serif;font-size:0.95rem;outline:none;margin-bottom:0.75rem;text-align:center;letter-spacing:0.08em"
+      onfocus="this.style.borderColor='rgba(200,226,250,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+    <div id="pw-error" style="display:none;color:#FF6B6B;font-size:0.8rem;margin-bottom:0.75rem">Incorrect password. Please try again.</div>
+    <button onclick="checkPassword()"
+      style="width:100%;padding:0.75rem;border-radius:8px;border:none;background:#5260FE;color:#fff;font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.04em"
+      onmouseover="this.style.background='#3d4fd4'" onmouseout="this.style.background='#5260FE'">Access Framework</button>
+    <div style="margin-top:1.2rem;font-size:0.72rem;color:rgba(200,226,250,0.4)">Prepared by Normative · May 2026</div>
+  </div>
+</div>
+
+</body>
+</html>

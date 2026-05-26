@@ -308,7 +308,6 @@ footer strong { color: var(--sky); }
     <a href="#overview" class="active">Step 1 · Filter</a>
     <a href="#maturity">Step 2 · Evaluate</a>
     <a href="#models">Step 3 · Select</a>
-    <a href="#decision">Step 4 · Review</a>
   </div>
   <span class="nav-badge">V.1.2 Draft · May 2026</span>
 </nav>
@@ -323,7 +322,7 @@ footer strong { color: var(--sky); }
     <!-- 4 Steps -->
     <div style="margin:2rem 0 0">
       <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:rgba(200,226,250,0.5);margin-bottom:0.65rem">How to use this framework</div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.15);border-radius:12px;overflow:hidden">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.15);border-radius:12px;overflow:hidden">
         <div style="padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,0.12);display:flex;gap:0.8rem;align-items:flex-start">
           <div style="font-family:'Anton',sans-serif;font-size:1.8rem;color:rgba(200,226,250,0.25);line-height:1;flex-shrink:0">1</div>
           <div><div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sky);margin-bottom:0.25rem">Filter</div><div style="font-size:0.78rem;color:rgba(200,226,250,0.8);line-height:1.45">Is this the right kind of partner?</div></div>
@@ -332,13 +331,9 @@ footer strong { color: var(--sky); }
           <div style="font-family:'Anton',sans-serif;font-size:1.8rem;color:rgba(200,226,250,0.25);line-height:1;flex-shrink:0">2</div>
           <div><div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sky);margin-bottom:0.25rem">Evaluate</div><div style="font-size:0.78rem;color:rgba(200,226,250,0.8);line-height:1.45">Where are they in their journey?</div></div>
         </div>
-        <div style="padding:1rem 1.1rem;border-right:1px solid rgba(255,255,255,0.12);display:flex;gap:0.8rem;align-items:flex-start">
+        <div style="padding:1rem 1.1rem;display:flex;gap:0.8rem;align-items:flex-start">
           <div style="font-family:'Anton',sans-serif;font-size:1.8rem;color:rgba(200,226,250,0.25);line-height:1;flex-shrink:0">3</div>
           <div><div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sky);margin-bottom:0.25rem">Select</div><div style="font-size:0.78rem;color:rgba(200,226,250,0.8);line-height:1.45">Which of the 4 models fits?</div></div>
-        </div>
-        <div style="padding:1rem 1.1rem;display:flex;gap:0.8rem;align-items:flex-start">
-          <div style="font-family:'Anton',sans-serif;font-size:1.8rem;color:rgba(200,226,250,0.25);line-height:1;flex-shrink:0">4</div>
-          <div><div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sky);margin-bottom:0.25rem">Review</div><div style="font-size:0.78rem;color:rgba(200,226,250,0.8);line-height:1.45">Scale, continue, or stop?</div></div>
         </div>
       </div>
     </div>
@@ -1321,55 +1316,7 @@ footer strong { color: var(--sky); }
 </div>
 </section>
 
-<!-- ─── DECISION GUIDE ─────────────────────────────────────── -->
-<section id="decision" style="background:var(--lgrey)">
-<div class="section-inner">
-  <div class="section-label">Decision Guide</div>
-  <h2 class="section-title">Which model fits your startup?</h2>
-  <p class="section-sub" style="margin-bottom:0.5rem">Use these questions to orient your thinking before a startup conversation begins. Each scenario points to the partnership model most likely to create lasting value.</p>
-  <div class="decision-grid">
-    <div class="decision-card" onclick="selectModel(0); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
-      <div class="decision-q">The startup has real-world patient data but needs a credible payer evidence story.</div>
-      <div class="decision-a">They have the data platform. UCB has the HEOR, payer, and regulatory relationships. Co-designing the evidence framework is the right first step.</div>
-      <div><span class="decision-model" style="background:var(--blue)">→ Model 1: RWE Evidence Partnership</span></div>
-    </div>
-    <div class="decision-card" onclick="selectModel(1); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
-      <div class="decision-q">The startup has a validated product and needs HCP distribution. We can benefit from their outcomes data.</div>
-      <div class="decision-a">They're commercially ready. UCB's commercial team and brand can accelerate HCP adoption. Define the value exchange and KPIs before engaging the commercial team.</div>
-      <div><span class="decision-model" style="background:var(--midnight)">→ Model 2: Commercial G2M Partnership</span></div>
-    </div>
-    <div class="decision-card" onclick="selectModel(2); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
-      <div class="decision-q">Multiple startups are solving the same ecosystem problem – and no single pharma company should own the solution.</div>
-      <div class="decision-a">UCB plays convener: bringing partners, payers, PAGs, and potentially other pharma companies together. Above-brand governance is essential. Multi-year commitment required.</div>
-      <div><span class="decision-model" style="background:var(--sage);color:var(--graphite)">→ Model 3: Ecosystem Enabler Partnership</span></div>
-    </div>
-    <div class="decision-card" onclick="selectModel(3); document.getElementById('models').scrollIntoView({behavior:'smooth'})">
-      <div class="decision-q">The startup is building something UCB can't build internally – and we need first-mover access rights.</div>
-      <div class="decision-a">Use equity for strategic access, not just financial exposure. Tie the investment to data rights, preferred commercial terms, and board representation. Get investment committee alignment first.</div>
-      <div><span class="decision-model" style="background:#7E9492">→ Model 4: Equity / Investment Partnership</span></div>
-    </div>
-  </div>
-
-  <div style="margin-top:2rem;background:var(--midnight);border-radius:12px;padding:2rem;color:white">
-    <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:0.75rem">The North Star Contract Checklist</div>
-    <p style="font-size:0.95rem;color:rgba(200,226,250,0.8);line-height:1.7;margin-bottom:1.25rem">Whichever model you choose, every UCB digital health partnership contract should address these elements to enable budget approval, sustainability, and a strong internal narrative:</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
-      <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1rem">
-        <div style="color:var(--sky);font-size:0.8rem;font-weight:700;margin-bottom:0.5rem">FAIR VALUE EXCHANGE</div>
-        <div style="font-size:0.85rem;color:rgba(200,226,250,0.75);line-height:1.6">What does UCB get? What does the partner get? Measured by what KPIs? Green money (revenue) or brown money (cost savings) narrative clearly stated.</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1rem">
-        <div style="color:var(--sky);font-size:0.8rem;font-weight:700;margin-bottom:0.5rem">DATA &amp; IP RIGHTS</div>
-        <div style="font-size:0.85rem;color:rgba(200,226,250,0.75);line-height:1.6">Who owns the data generated? Who owns jointly developed IP? What are the usage rights? These must be resolved before data collection begins.</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1rem">
-        <div style="color:var(--sky);font-size:0.8rem;font-weight:700;margin-bottom:0.5rem">SUSTAINABILITY MODEL</div>
-        <div style="font-size:0.85rem;color:rgba(200,226,250,0.75);line-height:1.6">Who pays for what, and for how long? What is the exit or renewal criteria? A Care Compass-style "who pays next year?" crisis is prevented by having this defined at contract signature.</div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
+<!-- ─── DECISION GUIDE (removed v1.2) ──────────────────────── -->
 
 <!-- ─── NOTES ──────────────────────────────────────────────── -->
 <!-- ─── FOOTER ─────────────────────────────────────────────── -->

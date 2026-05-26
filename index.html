@@ -308,6 +308,18 @@ footer strong { color: var(--sky); }
 .cap-list-item { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.58rem 1rem; border-top: 1px solid var(--border); font-size: 0.83rem; color: var(--graphite); line-height: 1.4; }
 .cap-tag { flex-shrink: 0; font-size: 0.63rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.18rem 0.65rem; border-radius: 20px; }
 .cap-tag-third { flex-shrink: 0; font-size: 0.63rem; font-weight: 600; letter-spacing: 0.04em; padding: 0.18rem 0.65rem; border-radius: 20px; background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; white-space: nowrap; }
+
+.panel-accordion { border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 0.6rem; overflow: hidden; background: white; }
+.panel-accordion-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; transition: filter 0.15s; }
+.panel-accordion-header:hover { filter: brightness(0.96); }
+.panel-accordion-plain-header { padding: 0.85rem 1.1rem; background: white; }
+.panel-accordion-plain-header:hover { background: #F4F6F5; }
+.panel-accordion-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.panel-accordion-title { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.panel-accordion-chevron { font-size: 0.8rem; color: var(--fog); transition: transform 0.2s; flex-shrink: 0; }
+.panel-accordion-body { display: none; border-top: 1.5px solid var(--border); }
+.panel-accordion.open .panel-accordion-body { display: block; }
+.panel-accordion.open .panel-accordion-chevron { transform: rotate(180deg); }
 </style>
 </head>
 <body>
@@ -548,36 +560,50 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB and the partner co-generate credible real-world evidence that proves clinical and economic value – unlocking reimbursement, building payer confidence, and creating a shared scientific asset that advances both parties' clinical and commercial goals. Neither party builds this alone: UCB contributes disease expertise, patient networks, and HEOR modeling; the partner contributes longitudinal data, continuous monitoring, and digital biomarkers unavailable from traditional clinical sources.</div>
     </div>
 
-    <div class="two-col">
-      <div class="info-card">
-        <div class="info-card-header c-blue">UCB Requires from Partner</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:var(--blue)"></div>
+          <span class="panel-accordion-title" style="color:var(--blue)">UCB Requires from Partner</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Validated clinical tool with measurable patient outcomes</div>
           <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Co-design of evidence framework (not data sharing only)</div>
           <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Data governance &amp; IP ownership agreed before collection</div>
           <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>IRB/ethics compliance for all patient data usage</div>
           <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Joint publication or dissemination commitment</div>
-          </div>
         </div>
       </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#252FA1">Partner Requires from UCB</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    </div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:#252FA1"></div>
+          <span class="panel-accordion-title" style="color:#252FA1">Partner Requires from UCB</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Evidence endpoint co-design to payer standards</div>
           <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Payer &amp; regulatory access (NICE, CMS, EU HTA)</div>
           <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Study design &amp; patient recruitment support</div>
           <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>UCB clinical network &amp; site access</div>
           <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Pharma co-author credibility for publications</div>
           <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Path to payer reimbursement &amp; recurring revenue</div>
-          </div>
         </div>
       </div>
     </div>
 
-    <div class="cap-list">
-      <div class="cap-list-header" style="background:#E5E9E8;color:#5A6B69">Capabilities Required</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#E5E9E8;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#5A6B69">Capabilities Required</span>
+        <span class="panel-accordion-chevron" style="color:#5A6B69">▾</span>
+      </div>
+      <div class="panel-accordion-body">
       <div class="cap-list-item"><span>RWE study design &amp; HEOR modeling</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Clinical investigator network &amp; site access</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Payer &amp; regulatory relationships (CMS, NICE, EU HTA)</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
@@ -593,11 +619,16 @@ footer strong { color: var(--sky); }
       <div class="cap-list-item"><span>Payer evidence threshold strategy</span><span class="cap-tag-third">Payer Advisory Firm</span></div>
       <div class="cap-list-item"><span>Patient recruitment &amp; community access</span><span class="cap-tag-third">Patient Advocacy Group</span></div>
       <div class="cap-list-item"><span>Health economics analysis</span><span class="cap-tag-third">Health Economics Firm</span></div>
+      </div>
     </div>
 
 
-    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
-      <div style="background:#C8DDD9;color:#2C5A53;padding:0.65rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin:-1.5rem -1.5rem 1.25rem -1.5rem;border-radius:10px 10px 0 0">When to Continue or Stop This Partnership</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#C8DDD9;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#2C5A53">When to Continue or Stop This Partnership</span>
+        <span class="panel-accordion-chevron" style="color:#2C5A53">▾</span>
+      </div>
+      <div class="panel-accordion-body" style="padding:1.25rem 1.5rem">
       <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Agree on these decision gates <em>before</em> the evidence study begins. If criteria are not met at any gate, the default is Stop — not "extend three more months."</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
         <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
@@ -654,6 +685,7 @@ footer strong { color: var(--sky); }
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -762,36 +794,50 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB co-launches, co-brands, or commercially supports a partner's validated product to drive HCP and patient adoption – in exchange for brand differentiation, patient engagement data, and measurable commercial benefit tied to the product's uptake and the drug it complements. The commercial team – including therapeutic area leads and field-facing roles – are enablers, not sellers: they open doors, they do not build pipelines for the startup.</div>
     </div>
 
-    <div class="two-col">
-      <div class="info-card">
-        <div class="info-card-header c-teal">UCB Requires from Partner</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:#252FA1"></div>
+          <span class="panel-accordion-title" style="color:#252FA1">UCB Requires from Partner</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Product commercially ready or near-launch with proven clinical utility</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Compliant HCP engagement model agreed before field involvement</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Brand alignment with UCB therapeutic priorities (not generic wellness)</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Revenue/value-sharing model approved by finance &amp; legal</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Clear impact on UCB drug KPIs (adherence, diagnosis, referrals)</div>
-          </div>
         </div>
       </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#1A2080">Partner Requires from UCB</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    </div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:#1A2080"></div>
+          <span class="panel-accordion-title" style="color:#1A2080">Partner Requires from UCB</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Commercial team access for HCP introductions &amp; co-promotion</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>UCB brand association &amp; market credibility</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Joint marketing investment &amp; shared commercial targets</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Market access &amp; payer reimbursement support</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Contract infrastructure (MSA/SOW vehicles)</div>
           <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Path to commercial sustainability via UCB distribution</div>
-          </div>
         </div>
       </div>
     </div>
 
-    <div class="cap-list">
-      <div class="cap-list-header" style="background:#E5E9E8;color:#5A6B69">Capabilities Required</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#E5E9E8;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#5A6B69">Capabilities Required</span>
+        <span class="panel-accordion-chevron" style="color:#5A6B69">▾</span>
+      </div>
+      <div class="panel-accordion-body">
       <div class="cap-list-item"><span>HCP relationships &amp; therapeutic area clinical network</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Therapeutic area leads for HCP introductions (KPI-gated)</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Brand co-investment &amp; marketing infrastructure</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
@@ -807,11 +853,16 @@ footer strong { color: var(--sky); }
       <div class="cap-list-item"><span>Patient-facing co-promotion access</span><span class="cap-tag-third">Patient Advocacy Group</span></div>
       <div class="cap-list-item"><span>Payer coverage strategy</span><span class="cap-tag-third">Payer Relations Specialist</span></div>
       <div class="cap-list-item"><span>SaMD / DTx contract &amp; compliance expertise</span><span class="cap-tag-third">Legal Firm</span></div>
+      </div>
     </div>
 
 
-    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
-      <div style="background:#C8DDD9;color:#2C5A53;padding:0.65rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin:-1.5rem -1.5rem 1.25rem -1.5rem;border-radius:10px 10px 0 0">When to Continue or Stop This Partnership</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#C8DDD9;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#2C5A53">When to Continue or Stop This Partnership</span>
+        <span class="panel-accordion-chevron" style="color:#2C5A53">▾</span>
+      </div>
+      <div class="panel-accordion-body" style="padding:1.25rem 1.5rem">
       <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Commercial G2M pilots are the highest-risk for "pilot drift" – where UCB field resources are consumed with no clear decision point. Set these gates at contract signature, not at the end of Year 1.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
         <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
@@ -868,6 +919,7 @@ footer strong { color: var(--sky); }
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -971,35 +1023,49 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB plays the role of trusted broker: convening the right stakeholders, facilitating shared standards, and reducing the friction that prevents digital health solutions from scaling – in exchange for brand leadership, ecosystem goodwill, and positioning as the digital health partner of choice across UCB's therapeutic priorities. This is the "above-brand" model: UCB's role is explicitly not commercial promotion of a single drug, but investment in the ecosystem infrastructure that benefits all its therapeutic priorities simultaneously. </div>
     </div>
 
-    <div class="two-col">
-      <div class="info-card">
-        <div class="info-card-header c-purple">UCB Requires from Partners</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:#5C786D"></div>
+          <span class="panel-accordion-title" style="color:#5C786D">UCB Requires from Partners</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Above-brand initiative — no single commercial bias or preferred treatment</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Shared governance commitment (UCB as convener, not controller)</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Defined shared outcomes benefiting the whole ecosystem</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Legal/compliance clearance for multi-party stakeholder engagement</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Long-term commitment from partners — not just event participation</div>
-          </div>
         </div>
       </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#8FAF9A">Partners Require from UCB</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    </div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:#8FAF9A"></div>
+          <span class="panel-accordion-title" style="color:#5C786D">Partners Require from UCB</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Neutral facilitation — no preferential treatment for any single partner</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Access to UCB's payer, PAG &amp; regulatory relationships</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Staff time &amp; resource commitment (medical, legal, commercial leadership)</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Multi-year UCB leadership continuity to compound ecosystem trust</div>
           <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Clear commercial justification to support internal budget approval</div>
-          </div>
         </div>
       </div>
     </div>
 
-    <div class="cap-list">
-      <div class="cap-list-header" style="background:#E5E9E8;color:#5A6B69">Capabilities Required</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#E5E9E8;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#5A6B69">Capabilities Required</span>
+        <span class="panel-accordion-chevron" style="color:#5A6B69">▾</span>
+      </div>
+      <div class="panel-accordion-body">
       <div class="cap-list-item"><span>Convening power &amp; cross-therapeutic area relationships</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Payer, PAG &amp; advocacy organization network access</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Above-brand reputation as disease area &amp; care ecosystem steward</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
@@ -1013,11 +1079,16 @@ footer strong { color: var(--sky); }
       <div class="cap-list-item"><span>Patient community access &amp; lived experience representation</span><span class="cap-tag-third">Patient Advocacy Groups</span></div>
       <div class="cap-list-item"><span>Clinical evidence standards development</span><span class="cap-tag-third">Academic Medical Centers</span></div>
       <div class="cap-list-item"><span>Coverage design &amp; co-governance input</span><span class="cap-tag-third">Payers / CMS / Insurers</span></div>
+      </div>
     </div>
 
 
-    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
-      <div style="background:#C8DDD9;color:#2C5A53;padding:0.65rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin:-1.5rem -1.5rem 1.25rem -1.5rem;border-radius:10px 10px 0 0">When to Continue or Stop This Partnership</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#C8DDD9;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#2C5A53">When to Continue or Stop This Partnership</span>
+        <span class="panel-accordion-chevron" style="color:#2C5A53">▾</span>
+      </div>
+      <div class="panel-accordion-body" style="padding:1.25rem 1.5rem">
       <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Ecosystem initiatives are the hardest to evaluate – their benefits are diffuse and long-term. Pre-agreed gates are the only protection against indefinite convening without output.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
         <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
@@ -1074,6 +1145,7 @@ footer strong { color: var(--sky); }
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -1175,36 +1247,50 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB invests financially and strategically in a digital health company building something UCB cannot build internally – gaining preferred access, board or advisory representation, data rights, and a long-term stake in the partner's commercial success. The investment is not purely financial: it must be tied to explicit strategic benefits (data rights for RWE, preferred HCP access, first-mover commercial rights). UCB should shift from pure financial equity toward structured strategic access agreements that create tangible operational value.</div>
     </div>
 
-    <div class="two-col">
-      <div class="info-card">
-        <div class="info-card-header c-gold" style="background:#7E9492">UCB Requires from Partner</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:#7E9492"></div>
+          <span class="panel-accordion-title" style="color:#7E9492">UCB Requires from Partner</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Investment thesis tied to UCB's strategic priorities (not just financial return)</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Defined data rights, commercial access &amp; governance terms in agreement</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Defensible IP, clinical evidence roadmap &amp; credible founding team</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Exit or continuation criteria agreed upfront (success in 3–5 years)</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Investment committee approval &amp; legal/IP due diligence completed</div>
-          </div>
         </div>
       </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#5E6F6D">Partner Requires from UCB</div>
-        <div class="info-card-body" style="padding:0">
-          <div class="req-menu">
+    </div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header panel-accordion-plain-header" onclick="togglePanel(this)">
+        <div style="display:flex;align-items:center;gap:0.65rem">
+          <div class="panel-accordion-dot" style="background:#5E6F6D"></div>
+          <span class="panel-accordion-title" style="color:#5E6F6D">Partner Requires from UCB</span>
+        </div>
+        <span class="panel-accordion-chevron">▾</span>
+      </div>
+      <div class="panel-accordion-body">
+        <div class="req-menu">
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Strategic value beyond capital — UCB cannot be a passive investor</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Board/advisory input aligned to partner's roadmap</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Clear exclusivity terms — partners resist full commercial lock-in</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Transparent IP assignment for jointly developed assets</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Long-term commitment signal that de-risks next fundraising round</div>
           <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Path to sustainable commercial model via UCB access</div>
-          </div>
         </div>
       </div>
     </div>
 
-    <div class="cap-list">
-      <div class="cap-list-header" style="background:#E5E9E8;color:#5A6B69">Capabilities Required</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#E5E9E8;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#5A6B69">Capabilities Required</span>
+        <span class="panel-accordion-chevron" style="color:#5A6B69">▾</span>
+      </div>
+      <div class="panel-accordion-body">
       <div class="cap-list-item"><span>Strategic investment capital &amp; BD/venture expertise</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Board or advisory representation (strategic input)</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
       <div class="cap-list-item"><span>Preferred commercial rights &amp; data access terms</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
@@ -1220,11 +1306,16 @@ footer strong { color: var(--sky); }
       <div class="cap-list-item"><span>IP &amp; transaction expertise (SaMD/digital health)</span><span class="cap-tag-third">IP Law Firm</span></div>
       <div class="cap-list-item"><span>Regulatory clearance pathway advisory (FDA/CE)</span><span class="cap-tag-third">Regulatory Consultant</span></div>
       <div class="cap-list-item"><span>Portfolio investment co-participation</span><span class="cap-tag-third">Co-investing Pharma</span></div>
+      </div>
     </div>
 
 
-    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
-      <div style="background:#C8DDD9;color:#2C5A53;padding:0.65rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin:-1.5rem -1.5rem 1.25rem -1.5rem;border-radius:10px 10px 0 0">When to Continue or Stop This Partnership</div>
+    <div class="panel-accordion">
+      <div class="panel-accordion-header" onclick="togglePanel(this)" style="background:#C8DDD9;padding:0.65rem 1rem">
+        <span class="panel-accordion-title" style="color:#2C5A53">When to Continue or Stop This Partnership</span>
+        <span class="panel-accordion-chevron" style="color:#2C5A53">▾</span>
+      </div>
+      <div class="panel-accordion-body" style="padding:1.25rem 1.5rem">
       <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Equity partnerships require both financial and strategic ROI. If the investment is generating only financial exposure — with no strategic access, data rights, or commercial pathway — it belongs in a separate portfolio, not the DCTx North Star.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
         <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
@@ -1281,6 +1372,7 @@ footer strong { color: var(--sky); }
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -1455,6 +1547,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ─── CASE ACCORDION ──────────────────────────────────────────
+
+function togglePanel(el) {
+  el.closest('.panel-accordion').classList.toggle('open');
+}
+
 function toggleCase(el) {
   const acc = el.closest('.case-accordion');
   acc.classList.toggle('open');

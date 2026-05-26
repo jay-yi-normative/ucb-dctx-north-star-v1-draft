@@ -615,33 +615,61 @@ footer strong { color: var(--sky); }
         </div>
         <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Step 4 · Review</div>
       </div>
-      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Agree on these decision gates <em>before</em> data collection begins. If the gate criteria are not met, the default decision is Stop – not "extend three more months."</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
-        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Scale</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Evidence endpoints met at pre-agreed statistical threshold</li>
-            <li>Payer review confirms dossier is submission-ready</li>
-            <li>Partner has demonstrated IRB/data compliance at scale</li>
-            <li>Joint publication or dissemination plan confirmed</li>
-          </ul>
+      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Agree on these decision gates <em>before</em> the evidence study begins. If criteria are not met at any gate, the default is Stop — not "extend three more months."</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✓ Continue &amp; Scale</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Data governance &amp; IRB approval signed within 60 days</li>
+              <li>≥50% of target patient cohort enrolled by Day 90</li>
+              <li>First data extract received and quality-validated</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">3–12 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>≥80% data completeness rate across enrolled cohort</li>
+              <li>Primary evidence endpoint trending toward significance</li>
+              <li>≥1 payer advisory meeting completed with positive feedback on evidence design</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">12+ Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Primary endpoint met at pre-agreed statistical threshold</li>
+              <li>Payer dossier reviewed and confirmed submission-ready</li>
+              <li>Joint publication or HTA submission underway</li>
+            </ul>
+          </div>
         </div>
-        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Continue</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Evidence trending positive but sample size not yet sufficient</li>
-            <li>One material gap remains (e.g., specific payer market not yet covered)</li>
-            <li>Continuation requires a defined new milestone – not open-ended</li>
-          </ul>
-        </div>
-        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Stop</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Evidence endpoints not met after agreed study period</li>
-            <li>Data governance or IP disputes unresolved after 60 days</li>
-            <li>Payer explicitly confirms evidence is insufficient for submission</li>
-            <li>Partner has not fulfilled co-design or publication commitments</li>
-          </ul>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✕ Stop &amp; Re-evaluate</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Data governance disputes unresolved at 60 days</li>
+              <li>Patient enrollment &lt;50% of target at Day 90</li>
+              <li>IRB or compliance issues flagged and unresolved within 30 days</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">3–12 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Primary evidence endpoint not on track at midpoint review</li>
+              <li>Payer advisory feedback indicates evidence design is flawed</li>
+              <li>Partner unable to demonstrate data security or IRB compliance at scale</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">12+ Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Primary endpoint not met after agreed study period</li>
+              <li>Payer explicitly confirms evidence is insufficient for submission</li>
+              <li>Partner acquired and data rights or study continuity unclear</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -834,32 +862,60 @@ footer strong { color: var(--sky); }
         <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Step 4 · Review</div>
       </div>
       <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Commercial G2M pilots are the highest-risk for "pilot drift" – where UCB field resources are consumed with no clear decision point. Set these gates at contract signature, not at the end of Year 1.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
-        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Scale</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Pre-agreed HCP adoption KPIs met (e.g., X% of target HCPs trialing tool)</li>
-            <li>Measurable link between tool adoption and UCB drug KPIs (adherence, NRX)</li>
-            <li>Partner has achieved or committed to reimbursement pathway</li>
-            <li>Brand team has confirmed budget for Year 2 co-investment</li>
-          </ul>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✓ Continue &amp; Scale</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Compliant HCP engagement protocol agreed and signed within 60 days</li>
+              <li>First 10–15 HCP introductions completed; field resource boundary confirmed</li>
+              <li>Partner onboarding of commercial team complete</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">3–6 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>HCP activation rate ≥25% of introduced physicians</li>
+              <li>≥1 patient outcome data point returned to UCB in compliant, de-identified format</li>
+              <li>Brand team has reviewed partner for co-marketing integration</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">6–12 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>HCP adoption meets pre-agreed KPI (≥30% of target HCPs actively using tool)</li>
+              <li>Measurable correlation between tool adoption and adherence improvement or NRX trend</li>
+              <li>Partner has a reimbursement pathway in motion or confirmed</li>
+            </ul>
+          </div>
         </div>
-        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Continue</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>HCP adoption below target but trend is positive</li>
-            <li>Reimbursement strategy is in motion but not yet confirmed</li>
-            <li>Continuation must include a commercial team engagement cap – no open-ended resource drain</li>
-          </ul>
-        </div>
-        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Stop</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>HCP adoption KPIs not met after agreed pilot period</li>
-            <li>No measurable link to UCB drug KPIs after 6 months</li>
-            <li>Reimbursement pathway still undefined after 12 months</li>
-            <li>Field team distraction without defined engagement boundary</li>
-          </ul>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✕ Stop &amp; Re-evaluate</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Compliant engagement protocol not agreed after 60 days</li>
+              <li>Commercial team flagging field resource drain with no KPI framework</li>
+              <li>Partner seeking UCB field involvement beyond the agreed boundary</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">3–6 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>HCP activation &lt;10% after first wave of introductions</li>
+              <li>No patient outcome data returned to UCB after 6 months</li>
+              <li>Partner product generating HCP complaints or negative clinical feedback</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">6–12 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>HCP adoption KPI not met at agreed pilot endpoint</li>
+              <li>No measurable link to UCB drug KPIs (adherence, NRX) after 12 months</li>
+              <li>Partner revenue model remains entirely dependent on UCB subsidy</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -1035,33 +1091,61 @@ footer strong { color: var(--sky); }
         </div>
         <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Step 4 · Review</div>
       </div>
-      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Ecosystem initiatives are the hardest to evaluate – their benefits are diffuse and long-term. That makes pre-agreed decision gates even more important to prevent indefinite "convening without output."</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
-        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Scale</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Defined ecosystem output produced (shared standard, evidence framework, or co-funded initiative)</li>
-            <li>2+ co-funders or governance members committed beyond UCB</li>
-            <li>Payer or PAG participation confirmed in the initiative</li>
-            <li>UCB brand leadership in the ecosystem is measurable (media, HCP recognition)</li>
-          </ul>
+      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Ecosystem initiatives are the hardest to evaluate – their benefits are diffuse and long-term. Pre-agreed gates are the only protection against indefinite convening without output.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✓ Continue &amp; Scale</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>≥3 external co-funders or governance members committed beyond UCB</li>
+              <li>Above-brand governance structure agreed and documented</li>
+              <li>Shared data standards or interoperability framework initiated</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">3–12 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>≥1 payer, health system, or PAG co-contributing to governance</li>
+              <li>First shared deliverable (evidence standard, care pathway, or platform spec) in progress</li>
+              <li>UCB clearly positioned as convener — not sole driver</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">12–36 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Coalition self-sustaining: ≥50% of costs covered by non-UCB members</li>
+              <li>Shared infrastructure adopted or piloted by ≥3 health systems or payers</li>
+              <li>UCB credited as convener in ≥1 published industry output or coalition report</li>
+            </ul>
+          </div>
         </div>
-        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Continue</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Output is in development but not yet complete</li>
-            <li>Co-funders in active discussion but not committed</li>
-            <li>Continuation requires a defined artifact delivery date – not open engagement</li>
-          </ul>
-        </div>
-        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Stop</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>No ecosystem output produced after two convening cycles</li>
-            <li>UCB is sole funder – no co-investment secured after 6 months</li>
-            <li>Governance has failed to maintain above-brand integrity</li>
-            <li>Partner participation is event-only with no long-term commitment</li>
-          </ul>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✕ Stop &amp; Re-evaluate</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>UCB is the only committed funder after 90 days</li>
+              <li>Governance structure not agreed after 60 days</li>
+              <li>No additional stakeholders joining despite UCB outreach efforts</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">3–12 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Membership growth flat or declining after 6 months</li>
+              <li>Shared deliverables delayed &gt;6 months with no new milestones set</li>
+              <li>UCB brand too closely associated with outputs, undermining above-brand positioning</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">12–36 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>No measurable system-level adoption after 24 months</li>
+              <li>UCB resource contribution consistently exceeds strategic benefit</li>
+              <li>Coalition has become a talking shop with no actionable outputs</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -1241,33 +1325,61 @@ footer strong { color: var(--sky); }
         </div>
         <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--midnight)">Step 4 · Review</div>
       </div>
-      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Equity partnerships must be reviewed against strategic (not just financial) criteria. Define exit criteria at time of investment – not when the relationship becomes difficult to exit.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem">
-        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✓ Deepen</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Strategic access terms (data rights, preferred commercial) are actively being used</li>
-            <li>Partner is on track to clinical or regulatory milestone agreed at investment</li>
-            <li>UCB's board/advisory input is shaping partner roadmap</li>
-            <li>Follow-on investment or structured partnership conversion is viable</li>
-          </ul>
+      <p style="font-size:0.85rem;color:var(--fog);line-height:1.6;margin-bottom:1rem">Equity partnerships require both financial and strategic ROI. If the investment is generating only financial exposure — with no strategic access, data rights, or commercial pathway — it belongs in a separate portfolio, not the DCTx North Star.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <div style="background:#F0FFF4;border:1.5px solid #86EFAC;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#16A34A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✓ Continue &amp; Scale</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Board seat or observer rights activated as per investment terms</li>
+              <li>UCB preferred data access clause enacted; first data pull received</li>
+              <li>Investment thesis validated with UCB investment committee</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">6–18 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Company hitting Series B/C fundraising milestones on track</li>
+              <li>UCB data access generating ≥1 UCB-owned evidence study or analysis</li>
+              <li>Company maintaining revenue growth &gt;20% YoY with UCB-adjacent therapeutic focus</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#15803d;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #86EFAC">18–36 Months</div>
+            <ul style="font-size:0.82rem;color:#14532d;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Clear pathway to commercial partnership (Model 1, 2, or 3) emerging</li>
+              <li>UCB strategic access rights generating measurable competitive advantage</li>
+              <li>Company valuation stable or increasing; exit options (M&amp;A, IPO) visible</li>
+            </ul>
+          </div>
         </div>
-        <div style="background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">⟳ Hold</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Partner is progressing but strategic access terms not yet activated</li>
-            <li>Market conditions have shifted – reassess strategic fit before deepening</li>
-            <li>Hold requires a defined reassessment date – not passive monitoring</li>
-          </ul>
-        </div>
-        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:8px;padding:1rem">
-          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">✕ Exit</div>
-          <ul style="font-size:0.82rem;color:#222;line-height:1.6;padding-left:1.1rem;margin:0">
-            <li>Strategic access terms were never operationalized after 12 months</li>
-            <li>Partner's therapeutic focus has drifted from UCB priorities</li>
-            <li>Financial return is the only remaining rationale – convert to pure financial instrument or divest</li>
-            <li>Partner has entered a competing commercial relationship that conflicts with UCB's terms</li>
-          </ul>
+        <div style="background:#FFF1F2;border:1.5px solid #FDA4AF;border-radius:10px;padding:1.1rem 1.25rem">
+          <div style="font-size:0.72rem;font-weight:700;color:#E11D48;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.85rem">✕ Stop &amp; Re-evaluate</div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">0–3 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Board or observer rights not granted as agreed at investment close</li>
+              <li>UCB preferred data access not enacted within 90 days</li>
+              <li>Investment committee concerns unresolved post-close</li>
+            </ul>
+          </div>
+          <div style="margin-bottom:0.75rem">
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">6–18 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>Company misses 2+ consecutive funding milestones</li>
+              <li>Valuation drops &gt;40% from UCB entry point</li>
+              <li>Company pivoting away from UCB's therapeutic areas or patient populations</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#be123c;margin-bottom:0.3rem;padding-bottom:0.2rem;border-bottom:1px solid #FDA4AF">18–36 Months</div>
+            <ul style="font-size:0.82rem;color:#881337;line-height:1.6;padding-left:1rem;margin:0.4rem 0 0">
+              <li>No commercial partnership or strategic collaboration materialized</li>
+              <li>Investment is purely financial — no strategic access value realized</li>
+              <li>Exit options unclear with no visible path to liquidity or strategic return</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

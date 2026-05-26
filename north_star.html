@@ -297,6 +297,11 @@ footer strong { color: var(--sky); }
 .case-accordion-body { display: none; border-top: 1px solid var(--border); }
 .case-accordion.open .case-accordion-body { display: block; }
 .case-accordion-hint { font-size: 0.7rem; color: var(--fog); font-style: italic; margin-bottom: 1rem; }
+
+.req-menu { margin: 0; padding: 0; }
+.req-menu-item { display:flex; align-items:flex-start; gap:0.55rem; padding:0.6rem 1rem; border-bottom:1px solid rgba(0,0,0,0.06); font-size:0.83rem; color:var(--graphite); line-height:1.4; }
+.req-menu-item:last-child { border-bottom:none; }
+.req-check { font-size:0.72rem; font-weight:800; flex-shrink:0; margin-top:0.18rem; }
 </style>
 </head>
 <body>
@@ -537,35 +542,30 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB and the partner co-generate credible real-world evidence that proves clinical and economic value – unlocking reimbursement, building payer confidence, and creating a shared scientific asset that advances both parties' clinical and commercial goals. Neither party builds this alone: UCB contributes disease expertise, patient networks, and HEOR modeling; the partner contributes longitudinal data, continuous monitoring, and digital biomarkers unavailable from traditional clinical sources.</div>
     </div>
 
-    <div class="three-col">
+    <div class="two-col">
       <div class="info-card">
         <div class="info-card-header c-blue">UCB Requires from Partner</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Validated or pilotable clinical tool with measurable patient outcome data</div></div>
-          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Agreement to co-design evidence framework (not just data sharing)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Data governance &amp; IP ownership agreed before data collection begins</div></div>
-          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">IRB/ethics compliance for all patient data usage</div></div>
-          <div class="info-item"><div class="info-dot" style="background:var(--blue)"></div><div class="info-text">Commitment to publish or disseminate results jointly</div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Validated clinical tool with measurable patient outcomes</div>
+          <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Co-design of evidence framework (not data sharing only)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Data governance &amp; IP ownership agreed before collection</div>
+          <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>IRB/ethics compliance for all patient data usage</div>
+          <div class="req-menu-item"><span class="req-check" style="color:var(--blue)">✓</span>Joint publication or dissemination commitment</div>
+          </div>
         </div>
       </div>
       <div class="info-card">
         <div class="info-card-header" style="background:#252FA1">Partner Requires from UCB</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">UCB co-design of evidence endpoints tied to payer evidence standards</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Access to UCB's payer and regulatory relationships (NICE, CMS, EU HTA bodies)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Financial or in-kind support for study design and patient recruitment</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">UCB clinical network and site access</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Credible pharma co-author on publications (reimbursement credibility)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text"><strong>A path to sustainable payer revenue</strong> – UCB's relationships with CMS, NICE, and EU HTA bodies represent the most direct route to reimbursement coverage a digital health company can access. For most partners, UCB's involvement is the primary mechanism for converting clinical evidence into recurring revenue.</div></div>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#7E9492">Constraints to Resolve First</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Patient data privacy: UCB cannot expose patient data without watertight safeguards</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Evidence endpoints must be agreed before data collection – payer thresholds vary significantly between US, UK (NICE), and EU HTA bodies</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">If the tool is SaMD (Software as Medical Device), regulatory pathway must be clear before UCB co-invests in evidence generation</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>AMCP 2025 payer-grade evidence standards now apply:</strong> AMCP's updated RWE assessment framework (2025) establishes minimum evidence requirements for payer coverage decisions. Evidence endpoints must be designed to meet these standards from the outset – partnerships building RWE that doesn't meet AMCP criteria will not convert to reimbursement coverage. Engage a payer advisory firm at study design stage, not after data collection.</div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Evidence endpoint co-design to payer standards</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Payer &amp; regulatory access (NICE, CMS, EU HTA)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Study design &amp; patient recruitment support</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>UCB clinical network &amp; site access</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Pharma co-author credibility for publications</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#252FA1">✓</span>Path to payer reimbursement &amp; recurring revenue</div>
+          </div>
         </div>
       </div>
     </div>
@@ -779,39 +779,30 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB co-launches, co-brands, or commercially supports a partner's validated product to drive HCP and patient adoption – in exchange for brand differentiation, patient engagement data, and measurable commercial benefit tied to the product's uptake and the drug it complements. The commercial team – including therapeutic area leads and field-facing roles – are enablers, not sellers: they open doors, they do not build pipelines for the startup.</div>
     </div>
 
-    <div class="three-col">
+    <div class="two-col">
       <div class="info-card">
         <div class="info-card-header c-teal">UCB Requires from Partner</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Product commercially ready or near-launch with proven clinical utility</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Compliant HCP engagement model agreed before commercial team involvement</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Brand/commercial alignment with UCB's therapeutic priorities (not generic wellness)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Revenue or value-sharing model approved by finance and legal before field activation</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#252FA1"></div><div class="info-text">Clear story on how partner adoption impacts UCB's drug KPIs (adherence, diagnosis, referrals)</div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Product commercially ready or near-launch with proven clinical utility</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Compliant HCP engagement model agreed before field involvement</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Brand alignment with UCB therapeutic priorities (not generic wellness)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Revenue/value-sharing model approved by finance &amp; legal</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Clear impact on UCB drug KPIs (adherence, diagnosis, referrals)</div>
+          </div>
         </div>
       </div>
       <div class="info-card">
         <div class="info-card-header" style="background:#1A2080">Partner Requires from UCB</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Commercial team access for co-promotion or HCP introductions (therapeutic area leads first, with broader commercial team engagement only after KPIs and compliance model are confirmed)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">UCB brand association for credibility with payers and providers</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Joint marketing investment commitment and shared targets</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Market access support for reimbursement negotiations (payer relationships)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text">Commercial operations and contract vehicles (MSA/SOW infrastructure)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#1A2080"></div><div class="info-text"><strong>A viable path to commercial sustainability</strong> – UCB's distribution infrastructure, HCP relationships, and payer credibility represent a path to recurring revenue that most digital health companies cannot build alone. Partners in this model are, in large part, looking for a sustainable commercial model – and UCB's co-promotion and market access capabilities are that model.</div></div>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#7E9492">Key Constraint</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Commercial team distraction risk:</strong>
-            <div style="background:rgba(37,47,161,0.07);border-left:3px solid #252FA1;border-radius:0 6px 6px 0;padding:0.65rem 0.9rem;margin-top:0.5rem;font-style:italic;font-size:0.85rem;line-height:1.6;color:var(--graphite)">"Do not involve the field team early unless we plan to do something with them and there's alignment – you put this in any field team and they're talking, it's going to distract them."
-              <div style="font-size:0.7rem;font-style:normal;margin-top:0.35rem;color:var(--fog);font-weight:700;letter-spacing:0.03em">— UCB Commercial Leadership</div>
-            </div>
-          </div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Value story must exist first:</strong> What constitutes 'value' for UCB (adherence data? brand lift? prescription uplift?) must be defined before engaging field or signing contracts</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Decision authority:</strong> Business unit head (GM), head of operations, and finance lead must align before broader team engagement</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>The two-speed operating model problem:</strong> Pharma operates on multi-year regulatory timelines; digital health iterates on 6-week software sprints. Without two separate governance tracks – one for regulatory/compliance submissions, one for product iteration – a co-launch partnership will paralyze the partner's product development while UCB's compliance processes catch up. Establish these tracks at contract signature.<sup style="font-size:0.65em;font-weight:700;vertical-align:super;line-height:0">2</sup></div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Commercial team access for HCP introductions &amp; co-promotion</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>UCB brand association &amp; market credibility</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Joint marketing investment &amp; shared commercial targets</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Market access &amp; payer reimbursement support</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Contract infrastructure (MSA/SOW vehicles)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#1A2080">✓</span>Path to commercial sustainability via UCB distribution</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1020,33 +1011,29 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB plays the role of trusted broker: convening the right stakeholders, facilitating shared standards, and reducing the friction that prevents digital health solutions from scaling – in exchange for brand leadership, ecosystem goodwill, and positioning as the digital health partner of choice across UCB's therapeutic priorities. This is the "above-brand" model: UCB's role is explicitly not commercial promotion of a single drug, but investment in the ecosystem infrastructure that benefits all its therapeutic priorities simultaneously. </div>
     </div>
 
-    <div class="three-col">
+    <div class="two-col">
       <div class="info-card">
         <div class="info-card-header c-purple">UCB Requires from Partners</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Initiative must be above-brand and cross-partner (no single commercial bias or preferred treatment promotion)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Partners commit to shared governance – UCB is convener, not controller</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Defined shared outcomes benefiting the whole ecosystem (not just UCB KPIs)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Legal/compliance clearance for multi-party stakeholder engagement</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Long-term commitment from partners – not just event participation</div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Above-brand initiative — no single commercial bias or preferred treatment</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Shared governance commitment (UCB as convener, not controller)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Defined shared outcomes benefiting the whole ecosystem</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Legal/compliance clearance for multi-party stakeholder engagement</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Long-term commitment from partners — not just event participation</div>
+          </div>
         </div>
       </div>
       <div class="info-card">
         <div class="info-card-header" style="background:#8FAF9A">Partners Require from UCB</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Neutral facilitation without preferential commercial treatment for any single partner</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Access to UCB's payer, PAG, and regulatory relationships that startups cannot access alone</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">UCB commitment of staff time and resource (not just budget) – including medical affairs, legal, and commercial leadership</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Multi-year UCB leadership continuity so the ecosystem trust compounds</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#8FAF9A"></div><div class="info-text">Clear articulation of what UCB gets back – so the commercial justification exists for budget approval</div></div>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#7E9492">Key Constraint</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Above-brand governance:</strong> This model fails if UCB's commercial team tries to use it for product promotion. Legal must clear the above-brand facilitation role explicitly before any multi-stakeholder event</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Budget justification:</strong> The multi-pharma consortium model – non-profit ecosystem investment – requires multi-company cost sharing to be sustainable. UCB cannot fund this unilaterally</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Exit clarity:</strong> Convening without follow-through destroys trust. The North Star IS the follow-through to the roundtable – each ecosystem activation needs a defined output</div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Neutral facilitation — no preferential treatment for any single partner</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Access to UCB's payer, PAG &amp; regulatory relationships</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Staff time &amp; resource commitment (medical, legal, commercial leadership)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Multi-year UCB leadership continuity to compound ecosystem trust</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#8FAF9A">✓</span>Clear commercial justification to support internal budget approval</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1248,34 +1235,30 @@ footer strong { color: var(--sky); }
       <div class="vision-text">UCB invests financially and strategically in a digital health company building something UCB cannot build internally – gaining preferred access, board or advisory representation, data rights, and a long-term stake in the partner's commercial success. The investment is not purely financial: it must be tied to explicit strategic benefits (data rights for RWE, preferred HCP access, first-mover commercial rights). UCB should shift from pure financial equity toward structured strategic access agreements that create tangible operational value.</div>
     </div>
 
-    <div class="three-col">
+    <div class="two-col">
       <div class="info-card">
         <div class="info-card-header c-gold" style="background:#7E9492">UCB Requires from Partner</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Clear investment thesis tied to UCB's strategic priorities (not just financial return)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Defined data rights, commercial access, and governance terms in investment agreement</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Defensible IP, clinical evidence roadmap, and credible founding team</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Exit or continuation criteria agreed upfront (what does success look like in 3–5 years?)</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text">Investment committee approval and legal/IP due diligence completed before commitment</div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Investment thesis tied to UCB's strategic priorities (not just financial return)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Defined data rights, commercial access &amp; governance terms in agreement</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Defensible IP, clinical evidence roadmap &amp; credible founding team</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Exit or continuation criteria agreed upfront (success in 3–5 years)</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Investment committee approval &amp; legal/IP due diligence completed</div>
+          </div>
         </div>
       </div>
       <div class="info-card">
         <div class="info-card-header" style="background:#5E6F6D">Partner Requires from UCB</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Strategic value beyond capital – UCB cannot be a passive financial investor only</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Board or advisory input aligned to partner's roadmap, not only UCB's commercial priorities</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Clear terms on exclusivity – partners often resist full commercial exclusivity with a single pharma investor</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Transparent IP assignment for any jointly developed assets</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text">Long-term commitment signal that de-risks partner's next fundraising round</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#5E6F6D"></div><div class="info-text"><strong>Strategic validation toward a sustainable business model</strong> – beyond capital, UCB's investment signals commercial viability to other investors. Startups receiving pharma equity are, in large part, seeking a path to sustainable revenue: UCB's involvement should be structured to open that path – through preferred commercial rights, data access, and market access support – not just to provide financial runway.</div></div>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-header" style="background:#7E9492">Key Constraint</div>
-        <div class="info-card-body">
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>UCB is moving away from equity:</strong> Leadership interviews and meetings with Tanja confirm UCB is deprioritizing equity investments in favor of structured operational partnerships (MoRAL P-type investments). Equity is Model 4 – use selectively for truly first-mover strategic opportunities</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Pure financial stake fails:</strong> Rock Health and McKinsey data confirm pharma equity investments without strategic access terms consistently underperform vs. structured operational partnerships</div></div>
-          <div class="info-item"><div class="info-dot" style="background:#7E9492"></div><div class="info-text"><strong>Valuation risk:</strong> Digital health valuations are compressed in 2025–2026. Investment committee must assess strategic ROI, not just financial return multiples</div></div>
+        <div class="info-card-body" style="padding:0">
+          <div class="req-menu">
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Strategic value beyond capital — UCB cannot be a passive investor</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Board/advisory input aligned to partner's roadmap</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Clear exclusivity terms — partners resist full commercial lock-in</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Transparent IP assignment for jointly developed assets</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Long-term commitment signal that de-risks next fundraising round</div>
+          <div class="req-menu-item"><span class="req-check" style="color:#5E6F6D">✓</span>Path to sustainable commercial model via UCB access</div>
+          </div>
         </div>
       </div>
     </div>

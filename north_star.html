@@ -302,6 +302,12 @@ footer strong { color: var(--sky); }
 .req-menu-item { display:flex; align-items:flex-start; gap:0.55rem; padding:0.6rem 1rem; border-bottom:1px solid rgba(0,0,0,0.06); font-size:0.83rem; color:var(--graphite); line-height:1.4; }
 .req-menu-item:last-child { border-bottom:none; }
 .req-check { font-size:0.72rem; font-weight:800; flex-shrink:0; margin-top:0.18rem; }
+
+.cap-list { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem; }
+.cap-list-header { padding: 0.65rem 1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+.cap-list-item { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.58rem 1rem; border-top: 1px solid var(--border); font-size: 0.83rem; color: var(--graphite); line-height: 1.4; }
+.cap-tag { flex-shrink: 0; font-size: 0.63rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.18rem 0.65rem; border-radius: 20px; }
+.cap-tag-third { flex-shrink: 0; font-size: 0.63rem; font-weight: 600; letter-spacing: 0.04em; padding: 0.18rem 0.65rem; border-radius: 20px; background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -570,43 +576,25 @@ footer strong { color: var(--sky); }
       </div>
     </div>
 
-    <div class="cap-table">
-      <div class="cap-table-head">
-        <div class="cap-col-head c-blue">UCB Brings</div>
-        <div class="cap-col-head" style="background:#252FA1">Digital Partner Brings</div>
-        <div class="cap-col-head third">Potential Third-Party Fills</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">RWE design expertise and HEOR modeling</div>
-        <div class="cap-cell">Longitudinal real-world patient outcome data</div>
-        <div class="cap-cell">Academic Medical Center (site access, IRB)</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">UCB clinical network (investigators, sites)</div>
-        <div class="cap-cell">Continuous monitoring or digital biomarker platform</div>
-        <div class="cap-cell">CRO for study design and operations</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Payer and regulatory relationships (CMS, NICE)</div>
-        <div class="cap-cell">Patient engagement and retention capabilities</div>
-        <div class="cap-cell">Payer advisory firm (evidence threshold expertise)</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Medical affairs and disease area credibility</div>
-        <div class="cap-cell">Clinical or behavioral science validation team</div>
-        <div class="cap-cell">Patient advocacy group (PAG) for recruitment</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Co-authorship and publication infrastructure</div>
-        <div class="cap-cell">Real-time data capture and analytics platform</div>
-        <div class="cap-cell">Health economics consulting firm</div>
-      </div>
-      <div class="cap-row" style="background:rgba(82,96,254,0.04)">
-        <div class="cap-cell"><strong>End-to-end risk mitigation expertise</strong> – UCB spends ~$40M/year understanding patient journeys and has navigated every step from drug discovery to commercial launch. This de-risks the regulatory, market access, and compliance path in ways startups fundamentally cannot replicate alone.</div>
-        <div class="cap-cell">–</div>
-        <div class="cap-cell">–</div>
-      </div>
+    <div class="cap-list">
+      <div class="cap-list-header" style="background:#5260FE;color:white">Capabilities Required</div>
+      <div class="cap-list-item"><span>RWE study design &amp; HEOR modeling</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Clinical investigator network &amp; site access</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Payer &amp; regulatory relationships (CMS, NICE, EU HTA)</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Medical affairs &amp; disease area credibility</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Co-authorship &amp; publication infrastructure</span><span class="cap-tag" style="background:#5260FE;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Longitudinal real-world patient outcome data</span><span class="cap-tag" style="background:#252FA1;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Continuous monitoring or digital biomarker platform</span><span class="cap-tag" style="background:#252FA1;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Patient engagement &amp; retention capabilities</span><span class="cap-tag" style="background:#252FA1;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Real-time data capture &amp; analytics platform</span><span class="cap-tag" style="background:#252FA1;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Clinical / behavioral science validation team</span><span class="cap-tag" style="background:#252FA1;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Site access &amp; IRB administration</span><span class="cap-tag-third">Academic Medical Center</span></div>
+      <div class="cap-list-item"><span>Study design &amp; clinical trial operations</span><span class="cap-tag-third">CRO</span></div>
+      <div class="cap-list-item"><span>Payer evidence threshold strategy</span><span class="cap-tag-third">Payer Advisory Firm</span></div>
+      <div class="cap-list-item"><span>Patient recruitment &amp; community access</span><span class="cap-tag-third">Patient Advocacy Group</span></div>
+      <div class="cap-list-item"><span>Health economics analysis</span><span class="cap-tag-third">Health Economics Firm</span></div>
     </div>
+
 
     <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
       <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
@@ -807,43 +795,25 @@ footer strong { color: var(--sky); }
       </div>
     </div>
 
-    <div class="cap-table">
-      <div class="cap-table-head">
-        <div class="cap-col-head c-teal">UCB Brings</div>
-        <div class="cap-col-head" style="background:#1A2080">Digital Partner Brings</div>
-        <div class="cap-col-head third">Potential Third-Party Fills</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">HCP relationships and therapeutic area clinical network</div>
-        <div class="cap-cell">Commercially viable digital product with proven clinical utility</div>
-        <div class="cap-cell">Market access consulting firm (reimbursement strategy)</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Therapeutic area leads for facilitated HCP introductions (commercial team involvement phased and KPI-gated)</div>
-        <div class="cap-cell">Patient acquisition and engagement platform</div>
-        <div class="cap-cell">Media/comms agency for co-branded HCP awareness</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Brand co-investment budget and marketing infrastructure</div>
-        <div class="cap-cell">Commercial team capable of co-promoting</div>
-        <div class="cap-cell">Patient advocacy group (PAG) for patient-facing co-promotion</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Commercial operations and contract vehicles</div>
-        <div class="cap-cell">Technology for outcome data capture and reporting</div>
-        <div class="cap-cell">Payer relations specialist (payer coverage strategy)</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Regulatory and compliance expertise for compliant HCP engagement</div>
-        <div class="cap-cell">Established or developing payer reimbursement strategy</div>
-        <div class="cap-cell">Legal firm with SaMD / digital therapeutics contract expertise</div>
-      </div>
-      <div class="cap-row" style="background:rgba(37,47,161,0.04)">
-        <div class="cap-cell"><strong>End-to-end risk mitigation expertise</strong> – process knowledge across drug development, HCP engagement compliance, payer negotiations, and commercial launch means UCB de-risks the commercial path for partners in ways no other collaborator can replicate.</div>
-        <div class="cap-cell">–</div>
-        <div class="cap-cell">–</div>
-      </div>
+    <div class="cap-list">
+      <div class="cap-list-header" style="background:#252FA1;color:white">Capabilities Required</div>
+      <div class="cap-list-item"><span>HCP relationships &amp; therapeutic area clinical network</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Therapeutic area leads for HCP introductions (KPI-gated)</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Brand co-investment &amp; marketing infrastructure</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Regulatory &amp; compliance expertise for HCP engagement</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Contract operations &amp; vehicle infrastructure (MSA/SOW)</span><span class="cap-tag" style="background:#252FA1;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Commercially ready digital product with proven clinical utility</span><span class="cap-tag" style="background:#1A2080;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Patient acquisition &amp; engagement platform</span><span class="cap-tag" style="background:#1A2080;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Co-promotion capability &amp; commercial team</span><span class="cap-tag" style="background:#1A2080;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Technology for outcome data capture &amp; reporting</span><span class="cap-tag" style="background:#1A2080;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Payer reimbursement strategy in development</span><span class="cap-tag" style="background:#1A2080;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Reimbursement &amp; market access strategy</span><span class="cap-tag-third">Market Access Firm</span></div>
+      <div class="cap-list-item"><span>HCP awareness &amp; co-branded communications</span><span class="cap-tag-third">Media / Comms Agency</span></div>
+      <div class="cap-list-item"><span>Patient-facing co-promotion access</span><span class="cap-tag-third">Patient Advocacy Group</span></div>
+      <div class="cap-list-item"><span>Payer coverage strategy</span><span class="cap-tag-third">Payer Relations Specialist</span></div>
+      <div class="cap-list-item"><span>SaMD / DTx contract &amp; compliance expertise</span><span class="cap-tag-third">Legal Firm</span></div>
     </div>
+
 
     <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
       <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
@@ -1038,38 +1008,23 @@ footer strong { color: var(--sky); }
       </div>
     </div>
 
-    <div class="cap-table">
-      <div class="cap-table-head">
-        <div class="cap-col-head c-purple">UCB Brings</div>
-        <div class="cap-col-head" style="background:#8FAF9A">Digital Partners Bring</div>
-        <div class="cap-col-head third">Third-Party Ecosystem Members</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Convening power and trusted relationships across therapeutic areas</div>
-        <div class="cap-cell">Digital tools addressing genuine system-level problems</div>
-        <div class="cap-cell">Other pharma companies as co-funders</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Connections to payers, PAGs, and advocacy organizations</div>
-        <div class="cap-cell">Willingness to participate in shared governance and data standards</div>
-        <div class="cap-cell">Relevant patient advocacy groups (PAGs)</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Above-brand reputation as a disease area and care ecosystem steward</div>
-        <div class="cap-cell">Clinical credibility with providers and patient communities</div>
-        <div class="cap-cell">Academic medical centers (shared standards and evidence)</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Medical affairs and regulatory navigation expertise</div>
-        <div class="cap-cell">Long-term commitment to ecosystem, not just short-term commercial gain</div>
-        <div class="cap-cell">Payers (CMS, commercial insurers) as co-design participants</div>
-      </div>
-      <div class="cap-row" style="background:rgba(179,200,197,0.08)">
-        <div class="cap-cell"><strong>Risk mitigation and compliance navigation</strong> – above-brand ecosystem initiatives carry unique legal and compliance considerations. UCB's experience navigating multi-stakeholder engagements, above-brand activities, and regulatory constraints is a critical enabler for ecosystem initiatives that startups and PAGs cannot lead alone.</div>
-        <div class="cap-cell">–</div>
-        <div class="cap-cell">–</div>
-      </div>
+    <div class="cap-list">
+      <div class="cap-list-header" style="background:#5C786D;color:white">Capabilities Required</div>
+      <div class="cap-list-item"><span>Convening power &amp; cross-therapeutic area relationships</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Payer, PAG &amp; advocacy organization network access</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Above-brand reputation as disease area &amp; care ecosystem steward</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Medical affairs &amp; regulatory navigation expertise</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Legal compliance for multi-stakeholder engagement</span><span class="cap-tag" style="background:#5C786D;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Digital tools addressing genuine system-level problems</span><span class="cap-tag" style="background:#8FAF9A;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Shared governance &amp; data standards participation</span><span class="cap-tag" style="background:#8FAF9A;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Clinical credibility with providers &amp; patient communities</span><span class="cap-tag" style="background:#8FAF9A;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Long-term ecosystem commitment (not short-term commercial gain)</span><span class="cap-tag" style="background:#8FAF9A;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Ecosystem co-funding &amp; cost sharing</span><span class="cap-tag-third">Other Pharma Companies</span></div>
+      <div class="cap-list-item"><span>Patient community access &amp; lived experience representation</span><span class="cap-tag-third">Patient Advocacy Groups</span></div>
+      <div class="cap-list-item"><span>Clinical evidence standards development</span><span class="cap-tag-third">Academic Medical Centers</span></div>
+      <div class="cap-list-item"><span>Coverage design &amp; co-governance input</span><span class="cap-tag-third">Payers / CMS / Insurers</span></div>
     </div>
+
 
     <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
       <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
@@ -1263,43 +1218,25 @@ footer strong { color: var(--sky); }
       </div>
     </div>
 
-    <div class="cap-table">
-      <div class="cap-table-head">
-        <div class="cap-col-head c-gold" style="background:#7E9492">UCB Brings</div>
-        <div class="cap-col-head" style="background:#5E6F6D">Digital Partner Brings</div>
-        <div class="cap-col-head third">Potential Third-Party Fills</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Strategic investment capital and BD/venture expertise</div>
-        <div class="cap-cell">Differentiated digital technology with defensible IP</div>
-        <div class="cap-cell">Co-investor (VC fund) for syndication and valuation support</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Board or advisory representation (strategic input)</div>
-        <div class="cap-cell">Credible founding team with clinical and commercial expertise</div>
-        <div class="cap-cell">BD advisory firm for deal structuring and due diligence</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Preferred commercial rights and data access terms</div>
-        <div class="cap-cell">Clinical evidence or evidence roadmap to FDA/CE clearance</div>
-        <div class="cap-cell">IP law firm with digital health / SaMD transaction expertise</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Clinical network for pilot deployment</div>
-        <div class="cap-cell">Viable commercial model with path to sustainability</div>
-        <div class="cap-cell">Regulatory consultant (FDA/CE clearance pathway advisory)</div>
-      </div>
-      <div class="cap-row">
-        <div class="cap-cell">Long-term commitment signal that de-risks fundraising</div>
-        <div class="cap-cell">Strategic value that makes UCB a preferred pharma partner</div>
-        <div class="cap-cell">Other pharma co-investors (portfolio investment model)</div>
-      </div>
-      <div class="cap-row" style="background:rgba(126,148,146,0.06)">
-        <div class="cap-cell"><strong>De-risking the commercial and regulatory path</strong> – beyond capital, UCB's investment signals to the market that a company has survived pharma-grade due diligence. UCB's end-to-end process knowledge from evidence generation to market access is the strategic asset that makes this more than a financial transaction.</div>
-        <div class="cap-cell">–</div>
-        <div class="cap-cell">–</div>
-      </div>
+    <div class="cap-list">
+      <div class="cap-list-header" style="background:#7E9492;color:white">Capabilities Required</div>
+      <div class="cap-list-item"><span>Strategic investment capital &amp; BD/venture expertise</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Board or advisory representation (strategic input)</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Preferred commercial rights &amp; data access terms</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Clinical network for pilot deployment</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Commercial validation signal de-risking fundraising</span><span class="cap-tag" style="background:#7E9492;color:white">UCB</span></div>
+      <div class="cap-list-item"><span>Differentiated digital technology with defensible IP</span><span class="cap-tag" style="background:#5E6F6D;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Credible founding team (clinical &amp; commercial expertise)</span><span class="cap-tag" style="background:#5E6F6D;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>FDA/CE clearance pathway or clear evidence roadmap</span><span class="cap-tag" style="background:#5E6F6D;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Viable commercial model with path to sustainability</span><span class="cap-tag" style="background:#5E6F6D;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Strategic value that makes UCB a preferred pharma partner</span><span class="cap-tag" style="background:#5E6F6D;color:white">Partner</span></div>
+      <div class="cap-list-item"><span>Deal syndication &amp; co-investment</span><span class="cap-tag-third">VC Fund</span></div>
+      <div class="cap-list-item"><span>Deal structuring &amp; due diligence support</span><span class="cap-tag-third">BD Advisory Firm</span></div>
+      <div class="cap-list-item"><span>IP &amp; transaction expertise (SaMD/digital health)</span><span class="cap-tag-third">IP Law Firm</span></div>
+      <div class="cap-list-item"><span>Regulatory clearance pathway advisory (FDA/CE)</span><span class="cap-tag-third">Regulatory Consultant</span></div>
+      <div class="cap-list-item"><span>Portfolio investment co-participation</span><span class="cap-tag-third">Co-investing Pharma</span></div>
     </div>
+
 
     <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem">
       <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
